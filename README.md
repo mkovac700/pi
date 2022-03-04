@@ -20,7 +20,7 @@ Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
 Bruno Bašić| bbasic@foi.hr | 0016136540 | brunobasic
 Marijan Kovač | mkovac@foi.hr | 0016142261 | mkovac700
-Tea Kovačević | tkovaci@foi.hr | 0016141584 | tkovacevi
+Tea Kovačević | tkovacevi@foi.hr | 0016141584 | tkovacevi
 
 ## Opis domene
 Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
