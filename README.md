@@ -11,7 +11,7 @@ Marijan Kovač | mkovac@foi.hr | 0016142261 | mkovac700
 Tea Kovačević | tkovacevi@foi.hr | 0016141584 | tkovacevi
 
 ## Opis domene
-Aplikacija MiniStore zamišljena je kao programsko rješenje za manje (lokalne) trgovine mješovite robe. Korisnici ove aplikacije su vlasnici trgovine i zaposlenici, kao primarnu funkcionalnost ističemo upravljanje zalihama robe, izdavanje računa kupcima i kreiranje popratne dokumentacije za poslovne procese. Od sekunarnih funkcionalnosti ističemo statistiku prodaje koja u svakom trenu daje ažurnu informaciju o najprodavanijim proizvodima u tekućem periodu, opciju finalnog obračuna - inventuru te izradu povratnice i narudžbenice koje olakšavaju svakodnevne aktivnosti unutar trgovine.
+Aplikacija MiniStore zamišljena je kao programsko rješenje za manje (lokalne) trgovine mješovite robe. Korisnici ove aplikacije su vlasnici trgovine i zaposlenici, a kao primarnu funkcionalnost ističemo upravljanje zalihama robe, izdavanje računa kupcima i kreiranje popratne dokumentacije za poslovne procese. Od sekunarnih funkcionalnosti ističemo statistiku prodaje koja u svakom trenu daje ažurnu informaciju o najprodavanijim proizvodima u tekućem periodu, opciju finalnog obračuna - inventuru te izradu povratnice i narudžbenice koje olakšavaju svakodnevne aktivnosti unutar trgovine.
 ## Specifikacija projekta
 
 
