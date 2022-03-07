@@ -22,7 +22,7 @@ F02 | Upravljanje artiklima| Upravljanje će obavljati CRUD operacije  | Marijan
 F03 | Zaprimanje artikala | Ova će funkcionalnost omogućiti evidenciju zaprimljene robe u skladište| Tea Kovačević
 F04 | Naručivanje artikala | Funkcionalnost namijenjena izradi narudžbenica | Bruno Bašić
 F05 | Izrada računa kupcu | Kreiranje, izdavanje i moguće poništavanje računa za prodane artikle | Bruno Bašić
-F06 | Inventura | Usporedba stanja na skaldištu i stvarnog stanja u trgovini | Tea Kovačević
+F06 | Inventura | Usporedba stanja na skladištu i stvarnog stanja u trgovini | Tea Kovačević
 F07 | Statistika prodaje | Analitički prikaz prodaje po artiklu i kategoriji | Bruno Bašić
 F08 | Upravljanje satnicom | Upis radnih sati od strane zaposlenika  | Marijan Kovač
 F09 | Izrada povratnice | Izrada PDF dokumenta sa artiklima koji se vraćaju dobavljaču  | Tea Kovačević
