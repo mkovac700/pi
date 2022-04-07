@@ -18,11 +18,11 @@ Aplikacija MiniStore zamišljena je kao programsko rješenje za manje (lokalne) 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Registracija i prijava | Registracija korisnika u sustav s opcijama administratora i zaposlenika. Administrator ima veće ovlasti te mogućnosti upravljanja zaposlenicima, skladištem te storniranje računa | Marijan Kovač
-F02 | Upravljanje artiklima| Upravljanje će obavljati CRUD operacije  | Marijan Kovač
+F02 | Upravljanje artiklima| Upravljanje će obavljati CRUD operacije, a dodatno će imati mogućnost generiranja QR ili BAR koda koji sadrži osnovne podatke o artiklu (npr. ID i cijena)  | Marijan Kovač
 F03 | Zaprimanje artikala | Ova će funkcionalnost omogućiti evidenciju zaprimljene robe u skladište| Tea Kovačević
 F04 | Naručivanje artikala | Funkcionalnost namijenjena izradi narudžbenica | Bruno Bašić
 F05 | Izrada računa kupcu | Kreiranje, izdavanje i moguće poništavanje računa za prodane artikle | Bruno Bašić
-F06 | Inventura | Usporedba stanja na skladištu i stvarnog stanja u trgovini | Tea Kovačević
+F06 | Inventura | Usporedba stanja na skladištu i stvarnog stanja u trgovini, koja će se realizirati upotrebom QR ili BAR koda iz F02 | Tea Kovačević
 F07 | Statistika prodaje | Analitički prikaz prodaje po artiklu i kategoriji | Bruno Bašić
 F08 | Upravljanje satnicom | Upis radnih sati od strane zaposlenika  | Marijan Kovač
 F09 | Izrada povratnice | Izrada PDF dokumenta sa artiklima koji se vraćaju dobavljaču  | Tea Kovačević
