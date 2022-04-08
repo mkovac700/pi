@@ -29,4 +29,4 @@ F08 | Upravljanje satnicom | Funkcionalnost omogućava unos radnih sati od stran
 F09 | Izrada povratnice | Izrada PDF dokumenta sa artiklima koji se iz raznih razloga (npr. istek roka trajanja, oštećena ambalaža, oštećen proizvod...) vraćaju dobavljaču jer ih nije moguće prodati. | Tea Kovačević
 
 ## Tehnologije i oprema
-.NET (Visual Studio 2022), GitHub, MySQL, Draw.io, SourceTree, Dbeaver, Microsoft Word
+.NET (Visual Studio 2022), GitHub, MySQL, Draw.io, Visual Paradigm, SourceTree, Dbeaver, Microsoft Word
