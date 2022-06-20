@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artikl.cs" />
+    <Compile Include="ArtiklNarudzbenica.cs" />
+    <Compile Include="ArtiklPovratnica.cs" />
+    <Compile Include="ArtiklPrimka.cs" />
+    <Compile Include="ArtiklSkladiste.cs" />
+    <Compile Include="Dobavljac.cs" />
     <Compile Include="FormArtikl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,8 +133,22 @@
     <Compile Include="FormPrijava.Designer.cs">
       <DependentUpon>FormPrijava.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grad.cs" />
+    <Compile Include="Inventura.cs" />
+    <Compile Include="Korisnik.cs" />
+    <Compile Include="Lokacija.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Narudzbenica.cs" />
+    <Compile Include="Povratnica.cs" />
+    <Compile Include="Primka.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Racun.cs" />
+    <Compile Include="RacunArtikl.cs" />
+    <Compile Include="Satnica.cs" />
+    <Compile Include="Skladiste.cs" />
+    <Compile Include="Trgovina.cs" />
+    <Compile Include="VrstaKorisnika.cs" />
     <EmbeddedResource Include="FormArtikl.resx">
       <DependentUpon>FormArtikl.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +194,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
