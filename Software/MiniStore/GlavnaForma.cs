@@ -40,8 +40,8 @@ namespace MiniStore
 
         private void btnRacun_Click(object sender, EventArgs e)
         {
-
             FormIzradaRacuna formIzradaRacuna = new FormIzradaRacuna();
+            formIzradaRacuna.TrgovinaId = trenutnaTrgovinaId;
             formIzradaRacuna.Show();
         }
 
