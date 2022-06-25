@@ -204,8 +204,10 @@ namespace MiniStore
                 var skladisteTrenutneTrgovine = db.Trgovinas.Include("Skladistes").First(t => t.id == TrgovinaId).Skladistes.First();
                 SkladisteId = skladisteTrenutneTrgovine.id;
                 sviArtikli = skladisteTrenutneTrgovine.ArtiklSkladistes.Select(s => s.Artikl).ToList();
-                
             }
+
+            // Unaprijed odaberi prvi nacin placanja.
+            lbNacinPlacanja.SelectedIndex = 0;
         }
 
         private void btnStorniraj_Click(object sender, EventArgs e)

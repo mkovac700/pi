@@ -20,9 +20,9 @@
         </Paragraphs>
         <rd:DefaultName>NazivTrgovine</rd:DefaultName>
         <Top>0.43603cm</Top>
-        <Left>0.5842cm</Left>
+        <Left>2.58286cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.199cm</Width>
+        <Width>4.15259cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -201,10 +201,10 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>3.84915cm</Top>
-        <Left>0.21141cm</Left>
+        <Top>4.0714cm</Top>
+        <Left>0.5842cm</Left>
         <Height>0cm</Height>
-        <Width>7.95279cm</Width>
+        <Width>7.199cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -629,7 +629,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!Cijena.Value*Fields!Cijena.Value*1.25)</Value>
+                              <Value>=Sum(Fields!Cijena.Value*Fields!Kolicina.Value*1.25)</Value>
                               <Style>
                                 <FontFamily>Consolas</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -701,10 +701,10 @@
         </Style>
       </Tablix>
       <Line Name="Line2">
-        <Top>6.53909cm</Top>
-        <Left>0.21141cm</Left>
+        <Top>6.76134cm</Top>
+        <Left>0.5842cm</Left>
         <Height>0cm</Height>
-        <Width>7.95279cm</Width>
+        <Width>7.199cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -761,8 +761,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>7.0058cm</Top>
-        <Left>3.16399cm</Left>
+        <Top>7.04108cm</Top>
+        <Left>4.49271cm</Left>
         <Height>0.48988cm</Height>
         <Width>1.64524cm</Width>
         <ZIndex>10</ZIndex>
@@ -793,8 +793,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>7.49568cm</Top>
-        <Left>3.16399cm</Left>
+        <Top>7.53096cm</Top>
+        <Left>4.49271cm</Left>
         <Height>0.48988cm</Height>
         <Width>1.64524cm</Width>
         <ZIndex>11</ZIndex>
@@ -827,8 +827,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>7.0058cm</Top>
-        <Left>4.80923cm</Left>
+        <Top>7.04108cm</Top>
+        <Left>6.13795cm</Left>
         <Height>0.48988cm</Height>
         <Width>1.64524cm</Width>
         <ZIndex>12</ZIndex>
@@ -849,7 +849,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Iznos.Value*Fields!Cijena.Value*0.25, "RacunIzvjestajStavka")</Value>
+                <Value>=Sum(Fields!Kolicina.Value*Fields!Cijena.Value*0.25, "RacunIzvjestajStavka")</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <Format>C2</Format>
@@ -864,7 +864,7 @@
         </Paragraphs>
         <rd:DefaultName>Iznos1</rd:DefaultName>
         <Top>7.53096cm</Top>
-        <Left>4.84451cm</Left>
+        <Left>6.17324cm</Left>
         <Height>0.4546cm</Height>
         <Width>1.60996cm</Width>
         <ZIndex>13</ZIndex>
@@ -880,9 +880,9 @@
       </Textbox>
       <Line Name="Line3">
         <Top>8.32209cm</Top>
-        <Left>0.21141cm</Left>
+        <Left>0.5842cm</Left>
         <Height>0cm</Height>
-        <Width>7.95279cm</Width>
+        <Width>7.199cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -890,6 +890,38 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="NazivTrgovine2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value EvaluationMode="Constant">Poslovnica</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NazivTrgovine</rd:DefaultName>
+        <Top>0.43603cm</Top>
+        <Left>0.5842cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.01145cm</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.76643in</Height>
     <Style>
