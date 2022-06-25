@@ -48,10 +48,10 @@ namespace MiniStore
             Artikl trenutniArtikl;
             using (var db = new Database())
             {
-                 trenutniArtikl = db.Artikls.Include("ArtiklCijenas").FirstOrDefault(a => a.id == sifraArtikla);
+                trenutniArtikl = db.Artikls.Include("ArtiklCijenas").FirstOrDefault(a => a.id == sifraArtikla);
             }
 
-            if(trenutniArtikl == null)
+            if (trenutniArtikl == null)
             {
                 MessageBox.Show("Artikl s tom šifrom ne postoji!");
                 return;
@@ -62,7 +62,7 @@ namespace MiniStore
             if (artikli.Count(a => a.artiklId == sifraArtikla) > 0)
             {
                 artikli.First(a => a.artiklId == sifraArtikla).kolicina += kolicina;
-                }
+            }
             else
             {
                 artikli.Add(new RacunArtikl
@@ -78,7 +78,7 @@ namespace MiniStore
 
             OsvjeziDgv();
 
-            
+
         }
 
         void OsvjeziDgv()
@@ -99,6 +99,11 @@ namespace MiniStore
 
         private void btnIzdajRacun_Click(object sender, EventArgs e)
         {
+            if (lbNacinPlacanja.SelectedIndex == -1) {
+                MessageBox.Show("Način plaćanja nije odabran!");
+                return;
+            }
+
             var iznos = artikli.Sum(a => (decimal)1.25 * a.cijena * a.kolicina);
 
             var racun = new Racun()
@@ -124,7 +129,48 @@ namespace MiniStore
 
                 db.SaveChanges();
 
-                MessageBox.Show("Račun generiran!");
+
+            }
+
+            var rezultat = MessageBox.Show("Račun generiran! Želite li prikazati račun?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (rezultat == DialogResult.Yes)
+            {
+                FormIzradaRacunaIzvjestaj f = new FormIzradaRacunaIzvjestaj();
+                using (var db = new Database())
+                {
+                    var trenutnaTrgovina = db.Trgovinas.Include("Lokacija").First(t => t.id == TrgovinaId);
+                    var trenutniKorisnik = db.Korisniks.First(k => k.id == 1);
+                    f.Podaci = new RacunIzvjestaj
+                    {
+                        NazivTrgovine = trenutnaTrgovina.oznaka,
+                        AdresaTrgovine = trenutnaTrgovina.Lokacija.adresa + "\n" + trenutnaTrgovina.Lokacija.Grad.naziv,
+                        Datum = racun.datumVrijeme,
+                        Blagajnik = trenutniKorisnik.ime + " " + trenutniKorisnik.prezime,
+                        Stavke = artikli.Select(s =>
+                        {
+                            var trenutniArtikl = db.Artikls.First(a => a.id == s.artiklId);
+                            return new RacunIzvjestajStavka
+                            {
+                                Sifra = s.artiklId,
+                                Naziv = trenutniArtikl.naziv,
+                                Kolicina = s.kolicina,
+                                Cijena = s.cijena,
+                                PDV = "25%",
+                                Iznos = s.kolicina*s.cijena*(decimal)1.25
+
+
+                            };
+                        }).ToList(),
+
+
+
+                    };
+
+                }
+
+
+                f.ShowDialog();
             }
         }
 
