@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="959d2dc27fb547ee97803e6cd53df46e" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2213_DBModel.Artikl" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.ArtiklCijena" Width="1.5" PointX="12.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.ArtiklNarudzbenica" Width="1.5" PointX="10.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.ArtiklPovratnica" Width="1.5" PointX="12.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.ArtiklPrimka" Width="1.5" PointX="12.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.ArtiklSkladiste" Width="1.5" PointX="15.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Dobavljac" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Grad" Width="1.5" PointX="3.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Inventura" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Korisnik" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Lokacija" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Narudzbenica" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Povratnica" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Primka" Width="1.5" PointX="15.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Racun" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.RacunArtikl" Width="1.5" PointX="7.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Satnica" Width="1.5" PointX="5.25" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Skladiste" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.Trgovina" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2213_DBModel.VrstaKorisnika" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklCijena_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklNarudzbenica_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklPovratnica_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklPrimka_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklSkladiste_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_RacunArtikl_Artikl" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklNarudzbenica_Narudzbenica" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklPrimka_Dobavljac" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklPrimka_Primka" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklPrimka_Skladiste" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklSkladiste_Skladiste" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Narudzbenica_Dobavljac" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Povratnica_Dobavljac" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Primka_Dobavljac" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Lokacija_Grad" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Inventura_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Inventura_Trgovina" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Korisnik_VrstaKorisnika" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Narudzbenica_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Povratnica_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Racun_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Satnica_Korisnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Trgovina_Lokacija" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Narudzbenica_Trgovina" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Povratnica_Trgovina" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Povratnica_Trgovina1" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Primka_Skladiste" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Racun_Trgovina" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_RacunArtikl_Racun" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_Skladiste_Trgovina" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.KorisnikTrgovina" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

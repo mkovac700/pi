@@ -12,12 +12,11 @@ namespace MiniStore
     using System;
     using System.Collections.Generic;
     
-    public partial class ArtiklPovratnica
+    public partial class ArtiklCijena
     {
         public int artiklId { get; set; }
-        public int povratnicaId { get; set; }
-        public Nullable<int> kolicina { get; set; }
-        public Nullable<decimal> cijena { get; set; }
+        public decimal cijena { get; set; }
+        public System.DateTime vrijediOd { get; set; }
     
         public virtual Artikl Artikl { get; set; }
     }
