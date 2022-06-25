@@ -34,6 +34,7 @@ namespace MiniStore
         private void btnNarucivanjeArtikala_Click(object sender, EventArgs e)
         {
             FormNarucivanjeArtikala formNarucivanjeArtikala = new FormNarucivanjeArtikala();
+            formNarucivanjeArtikala.TrgovinaId = trenutnaTrgovinaId;
             formNarucivanjeArtikala.Show();
         }
 
