@@ -13,6 +13,7 @@ namespace MiniStore
     public partial class FormIzradaRacuna : Form
     {
         public int TrgovinaId { get; set; }
+        public int SkladisteId { get; set; }
 
         List<RacunArtikl> artikli = new List<RacunArtikl>();
         List<Artikl> sviArtikli = new List<Artikl>();
@@ -46,15 +47,21 @@ namespace MiniStore
             int sifraArtikla = int.Parse(tbSifraArtikla.Text);
 
             Artikl trenutniArtikl;
+            decimal trenutniArtiklCijena;
             using (var db = new Database())
             {
-                trenutniArtikl = db.Artikls.Include("ArtiklCijenas").FirstOrDefault(a => a.id == sifraArtikla);
+                trenutniArtikl = sviArtikli.FirstOrDefault(a => a.id == sifraArtikla);
             }
 
             if (trenutniArtikl == null)
             {
-                MessageBox.Show("Artikl s tom šifrom ne postoji!");
+                MessageBox.Show("Artikl s tom šifrom ne postoji ili nije dostupan u ovoj poslovnici!");
                 return;
+            }
+
+            using (var db = new Database())
+            {
+                trenutniArtiklCijena = db.Artikls.Include("ArtiklCijenas").First(a => a.id == trenutniArtikl.id).ArtiklCijenas.OrderBy(c => c.vrijediOd).First().cijena;
             }
 
             Console.Beep(860, 350);
@@ -69,7 +76,7 @@ namespace MiniStore
                 {
                     artiklId = sifraArtikla,
                     kolicina = kolicina,
-                    cijena = trenutniArtikl.ArtiklCijenas.OrderBy(c => c.vrijediOd).First().cijena,
+                    cijena = trenutniArtiklCijena,
                 });
             }
 
@@ -179,12 +186,11 @@ namespace MiniStore
                 foreach (var artikl in artikli)
                 {
                     var trenutniArtikl= db.Artikls.Include("ArtiklSkladistes").First(p => p.id == artikl.artiklId);
-                    foreach (var item in trenutniArtikl.ArtiklSkladistes)
-                    {
-                        item.kolicina -= artikl.kolicina;
-                    }
-
+                    var trenutnoSkladiste = trenutniArtikl.ArtiklSkladistes.First(s => s.skaldisteId == SkladisteId);
+                    trenutnoSkladiste.kolicina -= artikl.kolicina;
                 }
+
+                db.SaveChanges();
             }
             
 
@@ -195,13 +201,19 @@ namespace MiniStore
         {
             using (var db = new Database())
             {
-                sviArtikli = db.Artikls.ToList();
+                var skladisteTrenutneTrgovine = db.Trgovinas.Include("Skladistes").First(t => t.id == TrgovinaId).Skladistes.First();
+                SkladisteId = skladisteTrenutneTrgovine.id;
+                sviArtikli = skladisteTrenutneTrgovine.ArtiklSkladistes.Select(s => s.Artikl).ToList();
+                
             }
         }
 
         private void btnStorniraj_Click(object sender, EventArgs e)
         {
-
+            FormStorniranjeRacuna f = new FormStorniranjeRacuna();
+            f.TrgovinaId = TrgovinaId;
+            f.SkladisteId = SkladisteId;
+            f.ShowDialog();
         }
     }
 }

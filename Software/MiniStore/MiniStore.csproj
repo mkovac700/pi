@@ -148,6 +148,12 @@
     <Compile Include="FormStatistikaProdaje.Designer.cs">
       <DependentUpon>FormStatistikaProdaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStorniranjeRacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStorniranjeRacuna.Designer.cs">
+      <DependentUpon>FormStorniranjeRacuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUpravljanjeArtiklima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStatistikaProdaje.resx">
       <DependentUpon>FormStatistikaProdaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStorniranjeRacuna.resx">
+      <DependentUpon>FormStorniranjeRacuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpravljanjeArtiklima.resx">
       <DependentUpon>FormUpravljanjeArtiklima.cs</DependentUpon>
