@@ -143,7 +143,45 @@ namespace MiniStore
                 db.SaveChanges();
             }
 
-            MessageBox.Show("Narudžbenica generirana!");
+            var rezultat = MessageBox.Show("Narudžbenica generirana! Želite li prikazati izvještaj?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (rezultat == DialogResult.Yes)
+            {
+                FormNarucivanjeArtikalaIzvjestaj f = new FormNarucivanjeArtikalaIzvjestaj();
+                using (var db = new Database())
+                {
+                    var trenutnaTrgovina = db.Trgovinas.Include("Lokacija").First(t => t.id == TrgovinaId);
+                    var trenutniDobavljac = cbDobavljac.SelectedItem as Dobavljac;
+                    var trenutniKorisnik = db.Korisniks.First(k => k.id == 1);
+                    f.Podaci = new NarudzbenicaIzvjestaj
+                    {
+                        NazivTrgovine = trenutnaTrgovina.oznaka,
+                        AdresaTrgovine = trenutnaTrgovina.Lokacija.adresa + "\n" + trenutnaTrgovina.Lokacija.Grad.naziv,
+                        NazivDobavljaca = trenutniDobavljac.naziv,
+                        AdresaDobavljaca = trenutniDobavljac.adresa,
+                        DatumNarudzbenice = narudzbenica.datumVrijeme,
+                        ImeKorisnika = trenutniKorisnik.ime + " " + trenutniKorisnik.prezime,
+                        Artikli = stavkeNarudzbenice.Select(s =>
+                        {
+                            var trenutniArtikl = db.Artikls.First(a => a.id == s.artiklId);
+                            return new NarudzbenicaIzvjestajStavka
+                            {
+                                NazivArtikla = trenutniArtikl.naziv,
+                                Kolicina = s.kolicina,
+
+                            };
+                        }).ToList(),
+
+
+
+                    };
+
+                }
+
+
+                f.ShowDialog();
+            }
+
             Close();
         }
     }
