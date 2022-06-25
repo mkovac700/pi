@@ -37,11 +37,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbSifraArtikla = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnUkloni = new System.Windows.Forms.Button();
+            this.btnGeneriraj = new System.Windows.Forms.Button();
+            this.dgvStavkeNarudzbenice = new System.Windows.Forms.DataGridView();
+            this.nudKolicina = new System.Windows.Forms.NumericUpDown();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kategorijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,11 +53,11 @@
             this.artiklPrimkasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklSkladistesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.racunArtiklsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nudKolicina = new System.Windows.Forms.NumericUpDown();
+            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeNarudzbenice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKolicina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -155,49 +155,53 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Količina za narudžbu:";
             // 
-            // button1
+            // btnDodaj
             // 
-            this.button1.Location = new System.Drawing.Point(463, 500);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 59);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Dodaj u narudžbenicu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDodaj.Location = new System.Drawing.Point(463, 500);
+            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(131, 59);
+            this.btnDodaj.TabIndex = 10;
+            this.btnDodaj.Text = "Dodaj u narudžbenicu";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // button2
+            // btnUkloni
             // 
-            this.button2.Location = new System.Drawing.Point(909, 500);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 59);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Ukloni odabranu stavku";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUkloni.Location = new System.Drawing.Point(909, 500);
+            this.btnUkloni.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUkloni.Name = "btnUkloni";
+            this.btnUkloni.Size = new System.Drawing.Size(157, 59);
+            this.btnUkloni.TabIndex = 11;
+            this.btnUkloni.Text = "Ukloni odabranu stavku";
+            this.btnUkloni.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnGeneriraj
             // 
-            this.button3.Location = new System.Drawing.Point(1075, 500);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(157, 59);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Generiraj narudžbenicu";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGeneriraj.Location = new System.Drawing.Point(1075, 500);
+            this.btnGeneriraj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGeneriraj.Name = "btnGeneriraj";
+            this.btnGeneriraj.Size = new System.Drawing.Size(157, 59);
+            this.btnGeneriraj.TabIndex = 12;
+            this.btnGeneriraj.Text = "Generiraj narudžbenicu";
+            this.btnGeneriraj.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvStavkeNarudzbenice
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(659, 106);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(573, 369);
-            this.dataGridView2.TabIndex = 13;
+            this.dgvStavkeNarudzbenice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStavkeNarudzbenice.Location = new System.Drawing.Point(659, 106);
+            this.dgvStavkeNarudzbenice.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvStavkeNarudzbenice.Name = "dgvStavkeNarudzbenice";
+            this.dgvStavkeNarudzbenice.RowHeadersWidth = 51;
+            this.dgvStavkeNarudzbenice.Size = new System.Drawing.Size(573, 369);
+            this.dgvStavkeNarudzbenice.TabIndex = 13;
             // 
-            // artiklBindingSource
+            // nudKolicina
             // 
-            this.artiklBindingSource.DataSource = typeof(MiniStore.Artikl);
+            this.nudKolicina.Location = new System.Drawing.Point(168, 533);
+            this.nudKolicina.Name = "nudKolicina";
+            this.nudKolicina.Size = new System.Drawing.Size(120, 22);
+            this.nudKolicina.TabIndex = 14;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -295,12 +299,9 @@
             this.racunArtiklsDataGridViewTextBoxColumn.Visible = false;
             this.racunArtiklsDataGridViewTextBoxColumn.Width = 125;
             // 
-            // nudKolicina
+            // artiklBindingSource
             // 
-            this.nudKolicina.Location = new System.Drawing.Point(168, 533);
-            this.nudKolicina.Name = "nudKolicina";
-            this.nudKolicina.Size = new System.Drawing.Size(120, 22);
-            this.nudKolicina.TabIndex = 14;
+            this.artiklBindingSource.DataSource = typeof(MiniStore.Artikl);
             // 
             // FormNarucivanjeArtikala
             // 
@@ -308,10 +309,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 590);
             this.Controls.Add(this.nudKolicina);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvStavkeNarudzbenice);
+            this.Controls.Add(this.btnGeneriraj);
+            this.Controls.Add(this.btnUkloni);
+            this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbSifraArtikla);
             this.Controls.Add(this.label4);
@@ -325,9 +326,9 @@
             this.Text = "Naručivanje artikala";
             this.Load += new System.EventHandler(this.FormNarucivanjeArtikala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeNarudzbenice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKolicina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,10 +344,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbSifraArtikla;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.Button btnUkloni;
+        private System.Windows.Forms.Button btnGeneriraj;
+        private System.Windows.Forms.DataGridView dgvStavkeNarudzbenice;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kategorijaDataGridViewTextBoxColumn;

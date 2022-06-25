@@ -14,6 +14,7 @@ namespace MiniStore
     {
         public int TrgovinaId { get; set; }
         List<Artikl> artikli = new List<Artikl>();
+        List<ArtiklNarudzbenica> stavkeNarudzbenice = new List<ArtiklNarudzbenica>();
         public FormNarucivanjeArtikala()
         {
             InitializeComponent();
@@ -57,6 +58,42 @@ namespace MiniStore
             {
                 dgvPopisArtikala.DataSource = artikli;
             }
+
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            var odabraniArtikl = dgvPopisArtikala.CurrentRow.DataBoundItem as Artikl;
+            int kolicina = (int)nudKolicina.Value;
+            if (kolicina < 1)
+            {
+                MessageBox.Show("Količina nije ispravna!");
+                return;
+            }
+            stavkeNarudzbenice.Add(new ArtiklNarudzbenica
+            {
+                artiklId = odabraniArtikl.id,
+                kolicina = kolicina,
+
+            });
+
+            using (var db = new Database())
+            {
+                
+                dgvStavkeNarudzbenice.DataSource = stavkeNarudzbenice.Select(p =>
+                {
+                    var trenutniArtikl = db.Artikls.First(a => a.id == p.artiklId);
+                    return new
+                    {
+                        Artikl = trenutniArtikl.naziv,
+                        Kolicina = p.kolicina,
+                        Dobavljac = db.Dobavljacs.First(d => d.id == trenutniArtikl.dobavljacId).naziv,
+                    };
+                }).ToList();
+
+            }
+            nudKolicina.Value = 0;
+            tbSifraArtikla.Clear();
 
         }
     }
