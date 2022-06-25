@@ -16,5 +16,10 @@ namespace MiniStore
         {
             InitializeComponent();
         }
+
+        private void FormStatistikaProdaje_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
