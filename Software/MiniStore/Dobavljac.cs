@@ -17,6 +17,7 @@ namespace MiniStore
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Dobavljac()
         {
+            this.Artikls = new HashSet<Artikl>();
             this.ArtiklPrimkas = new HashSet<ArtiklPrimka>();
             this.Narudzbenicas = new HashSet<Narudzbenica>();
             this.Povratnicas = new HashSet<Povratnica>();
@@ -27,6 +28,8 @@ namespace MiniStore
         public string naziv { get; set; }
         public string adresa { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Artikl> Artikls { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArtiklPrimka> ArtiklPrimkas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
