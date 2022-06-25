@@ -17,5 +17,10 @@ namespace MiniStore
         {
             InitializeComponent();
         }
+
+        private void FormNarucivanjeArtikala_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
