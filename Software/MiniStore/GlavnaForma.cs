@@ -67,5 +67,17 @@ namespace MiniStore
             FormIzradaPovratnice formIzradaPovratnice = new FormIzradaPovratnice();
             formIzradaPovratnice.Show();
         }
+
+        private void GlavnaForma_Load(object sender, EventArgs e)
+        {
+            List<Trgovina> popisTrgovina = new List<Trgovina>();
+
+            using (var db = new Database())
+            {
+                popisTrgovina = db.Trgovinas.ToList();
+            }
+            cbPoslovnica.DataSource = popisTrgovina;
+            cbPoslovnica.DisplayMember = "oznaka";
+        }
     }
 }
