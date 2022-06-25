@@ -12,6 +12,8 @@ namespace MiniStore
 {
     public partial class FormStatistikaProdaje : Form
     {
+        List<Artikl> artikli = new List<Artikl>();
+        List<string> kategorije = new List<string>();
         public FormStatistikaProdaje()
         {
             InitializeComponent();
@@ -19,7 +21,16 @@ namespace MiniStore
 
         private void FormStatistikaProdaje_Load(object sender, EventArgs e)
         {
+            
 
+            using(var db = new Database())
+            {
+                artikli = db.Artikls.ToList();
+                kategorije= artikli.Select(p=>p.kategorija).Distinct().ToList();
+            }
+            cbArtikli.DataSource = artikli;
+            cbArtikli.DisplayMember = "naziv";
+            cbKategorija.DataSource = kategorije;
         }
     }
 }
