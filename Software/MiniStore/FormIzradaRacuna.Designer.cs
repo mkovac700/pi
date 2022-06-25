@@ -116,6 +116,7 @@
             this.btnIzdajRacun.TabIndex = 6;
             this.btnIzdajRacun.Text = "Izdaj račun";
             this.btnIzdajRacun.UseVisualStyleBackColor = true;
+            this.btnIzdajRacun.Click += new System.EventHandler(this.btnIzdajRacun_Click);
             // 
             // label3
             // 
@@ -179,6 +180,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormIzradaRacuna";
             this.Text = "Izrada računa";
+            this.Load += new System.EventHandler(this.FormIzradaRacuna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRacuna)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

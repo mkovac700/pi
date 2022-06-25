@@ -15,6 +15,8 @@ namespace MiniStore
         public int TrgovinaId { get; set; }
 
         List<RacunArtikl> artikli = new List<RacunArtikl>();
+        List<Artikl> sviArtikli = new List<Artikl>();
+
         public FormIzradaRacuna()
         {
             InitializeComponent();
@@ -35,6 +37,12 @@ namespace MiniStore
                 kolicina = int.Parse(tbKolicina.Text);
             }
 
+            if (tbSifraArtikla.Text.Length < 1)
+            {
+                MessageBox.Show("Unesite šifru artikla!");
+                return;
+            }
+
             int sifraArtikla = int.Parse(tbSifraArtikla.Text);
 
             Artikl trenutniArtikl;
@@ -48,6 +56,8 @@ namespace MiniStore
                 MessageBox.Show("Artikl s tom šifrom ne postoji!");
                 return;
             }
+
+            Console.Beep(860, 350);
 
             if (artikli.Count(a => a.artiklId == sifraArtikla) > 0)
             {
@@ -73,21 +83,57 @@ namespace MiniStore
 
         void OsvjeziDgv()
         {
-           using(var db = new Database())
+            dgvStavkeRacuna.DataSource = artikli.Select(a => new
             {
-                dgvStavkeRacuna.DataSource = artikli.Select(a => new
-                {
-                    Naziv = db.Artikls.First(r=> r.id == a.artiklId).naziv,
-                    Kolicina = a.kolicina,
-                    Cijena = $"{a.cijena:C2}",
-                    PDV = "25%",
-                    Iznos = $"{((decimal)1.25 * a.cijena * a.kolicina):C2}",
-                }).ToList();
-            }
+                Naziv = sviArtikli.First(r => r.id == a.artiklId).naziv,
+                Kolicina = a.kolicina,
+                Cijena = $"{a.cijena:C2}",
+                PDV = "25%",
+                Iznos = $"{((decimal)1.25 * a.cijena * a.kolicina):C2}",
+            }).ToList();
 
             var iznos = artikli.Sum(a => (decimal)1.25 * a.cijena * a.kolicina);
 
             lblIznos.Text = $"{iznos:C2}";
+        }
+
+        private void btnIzdajRacun_Click(object sender, EventArgs e)
+        {
+            var iznos = artikli.Sum(a => (decimal)1.25 * a.cijena * a.kolicina);
+
+            var racun = new Racun()
+            {
+                datumVrijeme = DateTime.Now,
+                iznos = iznos,
+                korisnikId = 1,
+                trgovinaId = TrgovinaId,
+                nacinPlacanja = lbNacinPlacanja.SelectedItem.ToString(),
+            };
+
+            using (var db = new Database())
+            {
+                db.Racuns.Add(racun);
+                db.SaveChanges();
+
+                foreach (var stavka in artikli)
+                {
+                    stavka.racunId = racun.id;
+                }
+
+                racun.RacunArtikls = artikli;
+
+                db.SaveChanges();
+
+                MessageBox.Show("Račun generiran!");
+            }
+        }
+
+        private void FormIzradaRacuna_Load(object sender, EventArgs e)
+        {
+            using (var db = new Database())
+            {
+                sviArtikli = db.Artikls.ToList();
+            }
         }
     }
 }
