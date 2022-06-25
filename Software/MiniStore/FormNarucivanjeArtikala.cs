@@ -64,12 +64,19 @@ namespace MiniStore
                 MessageBox.Show("Količina nije ispravna!");
                 return;
             }
-            stavkeNarudzbenice.Add(new ArtiklNarudzbenica
-            {
-                artiklId = odabraniArtikl.id,
-                kolicina = kolicina,
 
-            });
+            if (stavkeNarudzbenice.Count(s => s.artiklId == odabraniArtikl.id) > 0)
+            {
+                stavkeNarudzbenice.First(s => s.artiklId == odabraniArtikl.id).kolicina += kolicina;
+            }
+            else
+            {
+                stavkeNarudzbenice.Add(new ArtiklNarudzbenica
+                {
+                    artiklId = odabraniArtikl.id,
+                    kolicina = kolicina,
+                });
+            }
 
             OsvjeziDgvStavke();
             nudKolicina.Value = 0;
@@ -85,7 +92,8 @@ namespace MiniStore
             if (stavkeNarudzbenice.Count < 1)
             {
                 cbDobavljac.Enabled = true;
-            } else
+            }
+            else
             {
                 cbDobavljac.Enabled = false;
             }
