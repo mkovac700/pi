@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbpGumbi = new System.Windows.Forms.TableLayoutPanel();
             this.btnIzradaPovratnice = new System.Windows.Forms.Button();
             this.btnUpravljanjeSatnicom = new System.Windows.Forms.Button();
             this.btnStatistikaProdaje = new System.Windows.Forms.Button();
@@ -39,35 +39,35 @@
             this.btnUpravljanjeArtiklima = new System.Windows.Forms.Button();
             this.cbPoslovnica = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tbpGumbi.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tbpGumbi
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.btnIzradaPovratnice, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnUpravljanjeSatnicom, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnStatistikaProdaje, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnInventura, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnRacun, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNarucivanjeArtikala, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnZaprimanjeArtikala, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnUpravljanjeArtiklima, 0, 0);
-            this.tableLayoutPanel1.Enabled = false;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(29, 68);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(666, 268);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tbpGumbi.AutoSize = true;
+            this.tbpGumbi.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tbpGumbi.ColumnCount = 3;
+            this.tbpGumbi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tbpGumbi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tbpGumbi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tbpGumbi.Controls.Add(this.btnIzradaPovratnice, 7, 0);
+            this.tbpGumbi.Controls.Add(this.btnUpravljanjeSatnicom, 6, 0);
+            this.tbpGumbi.Controls.Add(this.btnStatistikaProdaje, 5, 0);
+            this.tbpGumbi.Controls.Add(this.btnInventura, 4, 0);
+            this.tbpGumbi.Controls.Add(this.btnRacun, 3, 0);
+            this.tbpGumbi.Controls.Add(this.btnNarucivanjeArtikala, 2, 0);
+            this.tbpGumbi.Controls.Add(this.btnZaprimanjeArtikala, 1, 0);
+            this.tbpGumbi.Controls.Add(this.btnUpravljanjeArtiklima, 0, 0);
+            this.tbpGumbi.Enabled = false;
+            this.tbpGumbi.Location = new System.Drawing.Point(29, 68);
+            this.tbpGumbi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpGumbi.Name = "tbpGumbi";
+            this.tbpGumbi.RowCount = 3;
+            this.tbpGumbi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tbpGumbi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tbpGumbi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tbpGumbi.Size = new System.Drawing.Size(666, 268);
+            this.tbpGumbi.TabIndex = 0;
             // 
             // btnIzradaPovratnice
             // 
@@ -189,6 +189,7 @@
             this.cbPoslovnica.Name = "cbPoslovnica";
             this.cbPoslovnica.Size = new System.Drawing.Size(144, 24);
             this.cbPoslovnica.TabIndex = 1;
+            this.cbPoslovnica.SelectedIndexChanged += new System.EventHandler(this.cbPoslovnica_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -206,13 +207,13 @@
             this.ClientSize = new System.Drawing.Size(728, 381);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPoslovnica);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tbpGumbi);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GlavnaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MiniStore";
             this.Load += new System.EventHandler(this.GlavnaForma_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tbpGumbi.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,7 +221,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tbpGumbi;
         private System.Windows.Forms.Button btnUpravljanjeArtiklima;
         private System.Windows.Forms.Button btnIzradaPovratnice;
         private System.Windows.Forms.Button btnUpravljanjeSatnicom;

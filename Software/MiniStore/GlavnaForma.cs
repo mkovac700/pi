@@ -77,7 +77,12 @@ namespace MiniStore
                 popisTrgovina = db.Trgovinas.ToList();
             }
             cbPoslovnica.DataSource = popisTrgovina;
-            cbPoslovnica.DisplayMember = "oznaka";
+            cbPoslovnica.DisplayMember = "oznaka";  
+        }
+
+        private void cbPoslovnica_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbpGumbi.Enabled = true;
         }
     }
 }
