@@ -77,9 +77,23 @@ namespace MiniStore
 
             });
 
+            OsvjeziDgvStavke();
+            nudKolicina.Value = 0;
+            tbSifraArtikla.Clear();
+
+        }
+
+        private void btnUkloni_Click(object sender, EventArgs e)
+        {
+            stavkeNarudzbenice.RemoveAt(dgvStavkeNarudzbenice.CurrentRow.Index);
+            OsvjeziDgvStavke();
+        }
+
+        void OsvjeziDgvStavke()
+        {
             using (var db = new Database())
             {
-                
+
                 dgvStavkeNarudzbenice.DataSource = stavkeNarudzbenice.Select(p =>
                 {
                     var trenutniArtikl = db.Artikls.First(a => a.id == p.artiklId);
@@ -92,9 +106,6 @@ namespace MiniStore
                 }).ToList();
 
             }
-            nudKolicina.Value = 0;
-            tbSifraArtikla.Clear();
-
         }
     }
 }

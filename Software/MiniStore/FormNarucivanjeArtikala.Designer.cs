@@ -82,6 +82,8 @@
             // 
             // dgvPopisArtikala
             // 
+            this.dgvPopisArtikala.AllowUserToAddRows = false;
+            this.dgvPopisArtikala.AllowUserToDeleteRows = false;
             this.dgvPopisArtikala.AutoGenerateColumns = false;
             this.dgvPopisArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPopisArtikala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -100,6 +102,7 @@
             this.dgvPopisArtikala.Location = new System.Drawing.Point(20, 106);
             this.dgvPopisArtikala.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPopisArtikala.Name = "dgvPopisArtikala";
+            this.dgvPopisArtikala.ReadOnly = true;
             this.dgvPopisArtikala.RowHeadersWidth = 51;
             this.dgvPopisArtikala.Size = new System.Drawing.Size(573, 369);
             this.dgvPopisArtikala.TabIndex = 2;
@@ -175,6 +178,7 @@
             this.btnUkloni.TabIndex = 11;
             this.btnUkloni.Text = "Ukloni odabranu stavku";
             this.btnUkloni.UseVisualStyleBackColor = true;
+            this.btnUkloni.Click += new System.EventHandler(this.btnUkloni_Click);
             // 
             // btnGeneriraj
             // 
@@ -188,10 +192,13 @@
             // 
             // dgvStavkeNarudzbenice
             // 
+            this.dgvStavkeNarudzbenice.AllowUserToAddRows = false;
+            this.dgvStavkeNarudzbenice.AllowUserToDeleteRows = false;
             this.dgvStavkeNarudzbenice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeNarudzbenice.Location = new System.Drawing.Point(659, 106);
             this.dgvStavkeNarudzbenice.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStavkeNarudzbenice.Name = "dgvStavkeNarudzbenice";
+            this.dgvStavkeNarudzbenice.ReadOnly = true;
             this.dgvStavkeNarudzbenice.RowHeadersWidth = 51;
             this.dgvStavkeNarudzbenice.Size = new System.Drawing.Size(573, 369);
             this.dgvStavkeNarudzbenice.TabIndex = 13;
@@ -209,6 +216,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // nazivDataGridViewTextBoxColumn
@@ -217,6 +225,7 @@
             this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
             this.nazivDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             this.nazivDataGridViewTextBoxColumn.Width = 125;
             // 
             // kategorijaDataGridViewTextBoxColumn
@@ -225,6 +234,7 @@
             this.kategorijaDataGridViewTextBoxColumn.HeaderText = "kategorija";
             this.kategorijaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.kategorijaDataGridViewTextBoxColumn.Name = "kategorijaDataGridViewTextBoxColumn";
+            this.kategorijaDataGridViewTextBoxColumn.ReadOnly = true;
             this.kategorijaDataGridViewTextBoxColumn.Width = 125;
             // 
             // dobavljacIdDataGridViewTextBoxColumn
@@ -233,6 +243,7 @@
             this.dobavljacIdDataGridViewTextBoxColumn.HeaderText = "dobavljacId";
             this.dobavljacIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dobavljacIdDataGridViewTextBoxColumn.Name = "dobavljacIdDataGridViewTextBoxColumn";
+            this.dobavljacIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.dobavljacIdDataGridViewTextBoxColumn.Visible = false;
             this.dobavljacIdDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -242,6 +253,7 @@
             this.dobavljacDataGridViewTextBoxColumn.HeaderText = "Dobavljac";
             this.dobavljacDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dobavljacDataGridViewTextBoxColumn.Name = "dobavljacDataGridViewTextBoxColumn";
+            this.dobavljacDataGridViewTextBoxColumn.ReadOnly = true;
             this.dobavljacDataGridViewTextBoxColumn.Visible = false;
             this.dobavljacDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -251,6 +263,7 @@
             this.artiklCijenasDataGridViewTextBoxColumn.HeaderText = "ArtiklCijenas";
             this.artiklCijenasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.artiklCijenasDataGridViewTextBoxColumn.Name = "artiklCijenasDataGridViewTextBoxColumn";
+            this.artiklCijenasDataGridViewTextBoxColumn.ReadOnly = true;
             this.artiklCijenasDataGridViewTextBoxColumn.Visible = false;
             this.artiklCijenasDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -260,6 +273,7 @@
             this.artiklNarudzbenicasDataGridViewTextBoxColumn.HeaderText = "ArtiklNarudzbenicas";
             this.artiklNarudzbenicasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.artiklNarudzbenicasDataGridViewTextBoxColumn.Name = "artiklNarudzbenicasDataGridViewTextBoxColumn";
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn.ReadOnly = true;
             this.artiklNarudzbenicasDataGridViewTextBoxColumn.Visible = false;
             this.artiklNarudzbenicasDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -269,6 +283,7 @@
             this.artiklPovratnicasDataGridViewTextBoxColumn.HeaderText = "ArtiklPovratnicas";
             this.artiklPovratnicasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.artiklPovratnicasDataGridViewTextBoxColumn.Name = "artiklPovratnicasDataGridViewTextBoxColumn";
+            this.artiklPovratnicasDataGridViewTextBoxColumn.ReadOnly = true;
             this.artiklPovratnicasDataGridViewTextBoxColumn.Visible = false;
             this.artiklPovratnicasDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -278,6 +293,7 @@
             this.artiklPrimkasDataGridViewTextBoxColumn.HeaderText = "ArtiklPrimkas";
             this.artiklPrimkasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.artiklPrimkasDataGridViewTextBoxColumn.Name = "artiklPrimkasDataGridViewTextBoxColumn";
+            this.artiklPrimkasDataGridViewTextBoxColumn.ReadOnly = true;
             this.artiklPrimkasDataGridViewTextBoxColumn.Visible = false;
             this.artiklPrimkasDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -287,6 +303,7 @@
             this.artiklSkladistesDataGridViewTextBoxColumn.HeaderText = "ArtiklSkladistes";
             this.artiklSkladistesDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.artiklSkladistesDataGridViewTextBoxColumn.Name = "artiklSkladistesDataGridViewTextBoxColumn";
+            this.artiklSkladistesDataGridViewTextBoxColumn.ReadOnly = true;
             this.artiklSkladistesDataGridViewTextBoxColumn.Visible = false;
             this.artiklSkladistesDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -296,6 +313,7 @@
             this.racunArtiklsDataGridViewTextBoxColumn.HeaderText = "RacunArtikls";
             this.racunArtiklsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.racunArtiklsDataGridViewTextBoxColumn.Name = "racunArtiklsDataGridViewTextBoxColumn";
+            this.racunArtiklsDataGridViewTextBoxColumn.ReadOnly = true;
             this.racunArtiklsDataGridViewTextBoxColumn.Visible = false;
             this.racunArtiklsDataGridViewTextBoxColumn.Width = 125;
             // 
