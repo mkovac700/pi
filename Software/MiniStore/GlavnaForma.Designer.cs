@@ -37,7 +37,6 @@
             this.btnNarucivanjeArtikala = new System.Windows.Forms.Button();
             this.btnZaprimanjeArtikala = new System.Windows.Forms.Button();
             this.btnUpravljanjeArtiklima = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,15 +44,10 @@
             // 
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.btnIzradaPovratnice, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnUpravljanjeSatnicom, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnStatistikaProdaje, 5, 0);
@@ -62,11 +56,14 @@
             this.tableLayoutPanel1.Controls.Add(this.btnNarucivanjeArtikala, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnZaprimanjeArtikala, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnUpravljanjeArtiklima, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(26, 22);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1017, 63);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(666, 268);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnIzradaPovratnice
@@ -75,9 +72,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIzradaPovratnice.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnIzradaPovratnice.Location = new System.Drawing.Point(893, 4);
+            this.btnIzradaPovratnice.Location = new System.Drawing.Point(226, 183);
+            this.btnIzradaPovratnice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIzradaPovratnice.Name = "btnIzradaPovratnice";
-            this.btnIzradaPovratnice.Size = new System.Drawing.Size(120, 55);
+            this.btnIzradaPovratnice.Size = new System.Drawing.Size(212, 80);
             this.btnIzradaPovratnice.TabIndex = 7;
             this.btnIzradaPovratnice.Text = "Izrada povratnice";
             this.btnIzradaPovratnice.UseVisualStyleBackColor = true;
@@ -88,9 +86,10 @@
             this.btnUpravljanjeSatnicom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpravljanjeSatnicom.Location = new System.Drawing.Point(766, 4);
+            this.btnUpravljanjeSatnicom.Location = new System.Drawing.Point(5, 183);
+            this.btnUpravljanjeSatnicom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpravljanjeSatnicom.Name = "btnUpravljanjeSatnicom";
-            this.btnUpravljanjeSatnicom.Size = new System.Drawing.Size(120, 55);
+            this.btnUpravljanjeSatnicom.Size = new System.Drawing.Size(212, 80);
             this.btnUpravljanjeSatnicom.TabIndex = 6;
             this.btnUpravljanjeSatnicom.Text = "Upravljanje satnicom";
             this.btnUpravljanjeSatnicom.UseVisualStyleBackColor = true;
@@ -101,9 +100,10 @@
             this.btnStatistikaProdaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStatistikaProdaje.Location = new System.Drawing.Point(639, 4);
+            this.btnStatistikaProdaje.Location = new System.Drawing.Point(447, 94);
+            this.btnStatistikaProdaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStatistikaProdaje.Name = "btnStatistikaProdaje";
-            this.btnStatistikaProdaje.Size = new System.Drawing.Size(120, 55);
+            this.btnStatistikaProdaje.Size = new System.Drawing.Size(214, 80);
             this.btnStatistikaProdaje.TabIndex = 5;
             this.btnStatistikaProdaje.Text = "Statistika prodaje";
             this.btnStatistikaProdaje.UseVisualStyleBackColor = true;
@@ -114,9 +114,10 @@
             this.btnInventura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInventura.Location = new System.Drawing.Point(512, 4);
+            this.btnInventura.Location = new System.Drawing.Point(226, 94);
+            this.btnInventura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInventura.Name = "btnInventura";
-            this.btnInventura.Size = new System.Drawing.Size(120, 55);
+            this.btnInventura.Size = new System.Drawing.Size(212, 80);
             this.btnInventura.TabIndex = 4;
             this.btnInventura.Text = "Inventura";
             this.btnInventura.UseVisualStyleBackColor = true;
@@ -127,9 +128,10 @@
             this.btnRacun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRacun.Location = new System.Drawing.Point(385, 4);
+            this.btnRacun.Location = new System.Drawing.Point(5, 94);
+            this.btnRacun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRacun.Name = "btnRacun";
-            this.btnRacun.Size = new System.Drawing.Size(120, 55);
+            this.btnRacun.Size = new System.Drawing.Size(212, 80);
             this.btnRacun.TabIndex = 3;
             this.btnRacun.Text = "Račun";
             this.btnRacun.UseVisualStyleBackColor = true;
@@ -140,9 +142,10 @@
             this.btnNarucivanjeArtikala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNarucivanjeArtikala.Location = new System.Drawing.Point(258, 4);
+            this.btnNarucivanjeArtikala.Location = new System.Drawing.Point(447, 5);
+            this.btnNarucivanjeArtikala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNarucivanjeArtikala.Name = "btnNarucivanjeArtikala";
-            this.btnNarucivanjeArtikala.Size = new System.Drawing.Size(120, 55);
+            this.btnNarucivanjeArtikala.Size = new System.Drawing.Size(214, 80);
             this.btnNarucivanjeArtikala.TabIndex = 2;
             this.btnNarucivanjeArtikala.Text = "Naručivanje artikala";
             this.btnNarucivanjeArtikala.UseVisualStyleBackColor = true;
@@ -153,9 +156,10 @@
             this.btnZaprimanjeArtikala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnZaprimanjeArtikala.Location = new System.Drawing.Point(131, 4);
+            this.btnZaprimanjeArtikala.Location = new System.Drawing.Point(226, 5);
+            this.btnZaprimanjeArtikala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnZaprimanjeArtikala.Name = "btnZaprimanjeArtikala";
-            this.btnZaprimanjeArtikala.Size = new System.Drawing.Size(120, 55);
+            this.btnZaprimanjeArtikala.Size = new System.Drawing.Size(212, 80);
             this.btnZaprimanjeArtikala.TabIndex = 1;
             this.btnZaprimanjeArtikala.Text = "Zaprimanje artikala";
             this.btnZaprimanjeArtikala.UseVisualStyleBackColor = true;
@@ -166,29 +170,22 @@
             this.btnUpravljanjeArtiklima.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpravljanjeArtiklima.Location = new System.Drawing.Point(4, 4);
+            this.btnUpravljanjeArtiklima.Location = new System.Drawing.Point(5, 5);
+            this.btnUpravljanjeArtiklima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpravljanjeArtiklima.Name = "btnUpravljanjeArtiklima";
-            this.btnUpravljanjeArtiklima.Size = new System.Drawing.Size(120, 55);
+            this.btnUpravljanjeArtiklima.Size = new System.Drawing.Size(212, 80);
             this.btnUpravljanjeArtiklima.TabIndex = 0;
             this.btnUpravljanjeArtiklima.Text = "Upravljanje artiklima";
             this.btnUpravljanjeArtiklima.UseVisualStyleBackColor = true;
             this.btnUpravljanjeArtiklima.Click += new System.EventHandler(this.btnUpravljanjeArtiklima_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 79);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 498);
-            this.panel1.TabIndex = 1;
-            // 
             // GlavnaForma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 597);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(728, 423);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GlavnaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MiniStore";
@@ -202,7 +199,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnUpravljanjeArtiklima;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnIzradaPovratnice;
         private System.Windows.Forms.Button btnUpravljanjeSatnicom;
         private System.Windows.Forms.Button btnStatistikaProdaje;
