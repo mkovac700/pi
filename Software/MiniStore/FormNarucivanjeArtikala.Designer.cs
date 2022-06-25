@@ -28,21 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbDobavljac = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPopisArtikala = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbSifraArtikla = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.artiklBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kategorijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dobavljacIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dobavljacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artiklCijenasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artiklPovratnicasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artiklPrimkasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artiklSkladistesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.racunArtiklsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nudKolicina = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKolicina)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,20 +74,35 @@
             // 
             this.cbDobavljac.FormattingEnabled = true;
             this.cbDobavljac.Location = new System.Drawing.Point(160, 21);
-            this.cbDobavljac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDobavljac.Margin = new System.Windows.Forms.Padding(4);
             this.cbDobavljac.Name = "cbDobavljac";
             this.cbDobavljac.Size = new System.Drawing.Size(263, 24);
             this.cbDobavljac.TabIndex = 1;
+            this.cbDobavljac.SelectedIndexChanged += new System.EventHandler(this.cbDobavljac_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dgvPopisArtikala
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 106);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(573, 369);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvPopisArtikala.AutoGenerateColumns = false;
+            this.dgvPopisArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPopisArtikala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nazivDataGridViewTextBoxColumn,
+            this.kategorijaDataGridViewTextBoxColumn,
+            this.dobavljacIdDataGridViewTextBoxColumn,
+            this.dobavljacDataGridViewTextBoxColumn,
+            this.artiklCijenasDataGridViewTextBoxColumn,
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn,
+            this.artiklPovratnicasDataGridViewTextBoxColumn,
+            this.artiklPrimkasDataGridViewTextBoxColumn,
+            this.artiklSkladistesDataGridViewTextBoxColumn,
+            this.racunArtiklsDataGridViewTextBoxColumn});
+            this.dgvPopisArtikala.DataSource = this.artiklBindingSource;
+            this.dgvPopisArtikala.Location = new System.Drawing.Point(20, 106);
+            this.dgvPopisArtikala.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPopisArtikala.Name = "dgvPopisArtikala";
+            this.dgvPopisArtikala.RowHeadersWidth = 51;
+            this.dgvPopisArtikala.Size = new System.Drawing.Size(573, 369);
+            this.dgvPopisArtikala.TabIndex = 2;
             // 
             // label2
             // 
@@ -106,21 +136,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Šifra artikla:";
             // 
-            // textBox1
+            // tbSifraArtikla
             // 
-            this.textBox1.Location = new System.Drawing.Point(168, 500);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 22);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(168, 532);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 8;
+            this.tbSifraArtikla.Location = new System.Drawing.Point(168, 500);
+            this.tbSifraArtikla.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSifraArtikla.Name = "tbSifraArtikla";
+            this.tbSifraArtikla.Size = new System.Drawing.Size(252, 22);
+            this.tbSifraArtikla.TabIndex = 7;
+            this.tbSifraArtikla.TextChanged += new System.EventHandler(this.tbSIfraArtika_TextChanged);
             // 
             // label5
             // 
@@ -135,7 +158,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(463, 500);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 59);
             this.button1.TabIndex = 10;
@@ -145,7 +168,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(909, 500);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 59);
             this.button2.TabIndex = 11;
@@ -155,7 +178,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1075, 500);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(157, 59);
             this.button3.TabIndex = 12;
@@ -166,36 +189,145 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(659, 106);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(573, 369);
             this.dataGridView2.TabIndex = 13;
+            // 
+            // artiklBindingSource
+            // 
+            this.artiklBindingSource.DataSource = typeof(MiniStore.Artikl);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
+            this.nazivDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // kategorijaDataGridViewTextBoxColumn
+            // 
+            this.kategorijaDataGridViewTextBoxColumn.DataPropertyName = "kategorija";
+            this.kategorijaDataGridViewTextBoxColumn.HeaderText = "kategorija";
+            this.kategorijaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kategorijaDataGridViewTextBoxColumn.Name = "kategorijaDataGridViewTextBoxColumn";
+            this.kategorijaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dobavljacIdDataGridViewTextBoxColumn
+            // 
+            this.dobavljacIdDataGridViewTextBoxColumn.DataPropertyName = "dobavljacId";
+            this.dobavljacIdDataGridViewTextBoxColumn.HeaderText = "dobavljacId";
+            this.dobavljacIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dobavljacIdDataGridViewTextBoxColumn.Name = "dobavljacIdDataGridViewTextBoxColumn";
+            this.dobavljacIdDataGridViewTextBoxColumn.Visible = false;
+            this.dobavljacIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dobavljacDataGridViewTextBoxColumn
+            // 
+            this.dobavljacDataGridViewTextBoxColumn.DataPropertyName = "Dobavljac";
+            this.dobavljacDataGridViewTextBoxColumn.HeaderText = "Dobavljac";
+            this.dobavljacDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dobavljacDataGridViewTextBoxColumn.Name = "dobavljacDataGridViewTextBoxColumn";
+            this.dobavljacDataGridViewTextBoxColumn.Visible = false;
+            this.dobavljacDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // artiklCijenasDataGridViewTextBoxColumn
+            // 
+            this.artiklCijenasDataGridViewTextBoxColumn.DataPropertyName = "ArtiklCijenas";
+            this.artiklCijenasDataGridViewTextBoxColumn.HeaderText = "ArtiklCijenas";
+            this.artiklCijenasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.artiklCijenasDataGridViewTextBoxColumn.Name = "artiklCijenasDataGridViewTextBoxColumn";
+            this.artiklCijenasDataGridViewTextBoxColumn.Visible = false;
+            this.artiklCijenasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // artiklNarudzbenicasDataGridViewTextBoxColumn
+            // 
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn.DataPropertyName = "ArtiklNarudzbenicas";
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn.HeaderText = "ArtiklNarudzbenicas";
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn.Name = "artiklNarudzbenicasDataGridViewTextBoxColumn";
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn.Visible = false;
+            this.artiklNarudzbenicasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // artiklPovratnicasDataGridViewTextBoxColumn
+            // 
+            this.artiklPovratnicasDataGridViewTextBoxColumn.DataPropertyName = "ArtiklPovratnicas";
+            this.artiklPovratnicasDataGridViewTextBoxColumn.HeaderText = "ArtiklPovratnicas";
+            this.artiklPovratnicasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.artiklPovratnicasDataGridViewTextBoxColumn.Name = "artiklPovratnicasDataGridViewTextBoxColumn";
+            this.artiklPovratnicasDataGridViewTextBoxColumn.Visible = false;
+            this.artiklPovratnicasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // artiklPrimkasDataGridViewTextBoxColumn
+            // 
+            this.artiklPrimkasDataGridViewTextBoxColumn.DataPropertyName = "ArtiklPrimkas";
+            this.artiklPrimkasDataGridViewTextBoxColumn.HeaderText = "ArtiklPrimkas";
+            this.artiklPrimkasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.artiklPrimkasDataGridViewTextBoxColumn.Name = "artiklPrimkasDataGridViewTextBoxColumn";
+            this.artiklPrimkasDataGridViewTextBoxColumn.Visible = false;
+            this.artiklPrimkasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // artiklSkladistesDataGridViewTextBoxColumn
+            // 
+            this.artiklSkladistesDataGridViewTextBoxColumn.DataPropertyName = "ArtiklSkladistes";
+            this.artiklSkladistesDataGridViewTextBoxColumn.HeaderText = "ArtiklSkladistes";
+            this.artiklSkladistesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.artiklSkladistesDataGridViewTextBoxColumn.Name = "artiklSkladistesDataGridViewTextBoxColumn";
+            this.artiklSkladistesDataGridViewTextBoxColumn.Visible = false;
+            this.artiklSkladistesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // racunArtiklsDataGridViewTextBoxColumn
+            // 
+            this.racunArtiklsDataGridViewTextBoxColumn.DataPropertyName = "RacunArtikls";
+            this.racunArtiklsDataGridViewTextBoxColumn.HeaderText = "RacunArtikls";
+            this.racunArtiklsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.racunArtiklsDataGridViewTextBoxColumn.Name = "racunArtiklsDataGridViewTextBoxColumn";
+            this.racunArtiklsDataGridViewTextBoxColumn.Visible = false;
+            this.racunArtiklsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nudKolicina
+            // 
+            this.nudKolicina.Location = new System.Drawing.Point(168, 533);
+            this.nudKolicina.Name = "nudKolicina";
+            this.nudKolicina.Size = new System.Drawing.Size(120, 22);
+            this.nudKolicina.TabIndex = 14;
             // 
             // FormNarucivanjeArtikala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 590);
+            this.Controls.Add(this.nudKolicina);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSifraArtikla);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPopisArtikala);
             this.Controls.Add(this.cbDobavljac);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormNarucivanjeArtikala";
             this.Text = "Naručivanje artikala";
             this.Load += new System.EventHandler(this.FormNarucivanjeArtikala_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artiklBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKolicina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +337,28 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbDobavljac;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPopisArtikala;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbSifraArtikla;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kategorijaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dobavljacIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dobavljacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artiklCijenasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artiklNarudzbenicasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artiklPovratnicasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artiklPrimkasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artiklSkladistesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn racunArtiklsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource artiklBindingSource;
+        private System.Windows.Forms.NumericUpDown nudKolicina;
     }
 }
