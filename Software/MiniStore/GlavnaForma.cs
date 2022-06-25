@@ -12,6 +12,8 @@ namespace MiniStore
 {
     public partial class GlavnaForma : Form
     {
+        public int KorisnikId { get; set; } = 1;
+        int trenutnaTrgovinaId;
         public GlavnaForma()
         {
             InitializeComponent();
@@ -31,7 +33,6 @@ namespace MiniStore
 
         private void btnNarucivanjeArtikala_Click(object sender, EventArgs e)
         {
-
             FormNarucivanjeArtikala formNarucivanjeArtikala = new FormNarucivanjeArtikala();
             formNarucivanjeArtikala.Show();
         }
@@ -70,19 +71,21 @@ namespace MiniStore
 
         private void GlavnaForma_Load(object sender, EventArgs e)
         {
-            List<Trgovina> popisTrgovina = new List<Trgovina>();
-
+           
             using (var db = new Database())
             {
-                popisTrgovina = db.Trgovinas.ToList();
+                var trenutniKorisnik = db.Korisniks.Include("Trgovinas").FirstOrDefault((k) => k.id == KorisnikId);
+
+                if (trenutniKorisnik != null) {
+                    var trenutnaTrgovina = trenutniKorisnik.Trgovinas.ToList().First();
+                    trenutnaTrgovinaId = trenutnaTrgovina.id;
+
+                    lblPoslovnica.Text = $"Poslovnica: {trenutnaTrgovina.oznaka}";
+                }
             }
-            cbPoslovnica.DataSource = popisTrgovina;
-            cbPoslovnica.DisplayMember = "oznaka";  
+           
         }
 
-        private void cbPoslovnica_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            tbpGumbi.Enabled = true;
-        }
+        
     }
 }

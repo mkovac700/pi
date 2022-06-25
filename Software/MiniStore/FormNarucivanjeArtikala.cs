@@ -12,6 +12,7 @@ namespace MiniStore
 {
     public partial class FormNarucivanjeArtikala : Form
     {
+        public int TrgovinaId { get; set; }
         public FormNarucivanjeArtikala()
         {
             InitializeComponent();
