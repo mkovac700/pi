@@ -105,6 +105,7 @@
             this.btnStorniraj.TabIndex = 5;
             this.btnStorniraj.Text = "Storniraj račun";
             this.btnStorniraj.UseVisualStyleBackColor = true;
+            this.btnStorniraj.Click += new System.EventHandler(this.btnStorniraj_Click);
             // 
             // btnIzdajRacun
             // 

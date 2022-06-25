@@ -170,8 +170,25 @@ namespace MiniStore
                 }
 
 
+
                 f.ShowDialog();
             }
+
+            using (var db = new Database())
+            {
+                foreach (var artikl in artikli)
+                {
+                    var trenutniArtikl= db.Artikls.Include("ArtiklSkladistes").First(p => p.id == artikl.artiklId);
+                    foreach (var item in trenutniArtikl.ArtiklSkladistes)
+                    {
+                        item.kolicina -= artikl.kolicina;
+                    }
+
+                }
+            }
+            
+
+            Close();
         }
 
         private void FormIzradaRacuna_Load(object sender, EventArgs e)
@@ -180,6 +197,11 @@ namespace MiniStore
             {
                 sviArtikli = db.Artikls.ToList();
             }
+        }
+
+        private void btnStorniraj_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

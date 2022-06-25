@@ -108,7 +108,7 @@
               <TextRun>
                 <Value>=First(Fields!Datum.Value, "RacunIzvjestaj")</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>8pt</FontSize>
                   <Language>hr-HR</Language>
                 </Style>
               </TextRun>
@@ -120,9 +120,9 @@
         </Paragraphs>
         <rd:DefaultName>Datum</rd:DefaultName>
         <Top>3.23737cm</Top>
-        <Left>4.80923cm</Left>
+        <Left>3.807cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.97397cm</Width>
+        <Width>3.9762cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -177,7 +177,7 @@
               <TextRun>
                 <Value>=First(Fields!Blagajnik.Value, "RacunIzvjestaj")</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
