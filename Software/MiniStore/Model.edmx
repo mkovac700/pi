@@ -12,6 +12,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="naziv" Type="nvarchar" MaxLength="255" />
           <Property Name="kategorija" Type="nvarchar" MaxLength="255" />
+          <Property Name="dobavljacId" Type="int" />
         </EntityType>
         <EntityType Name="ArtiklCijena">
           <Key>
@@ -205,6 +206,18 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="oznaka" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <Association Name="FK_Artikl_Dobavljac">
+          <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="0..1" />
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobavljac">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Artikl">
+              <PropertyRef Name="dobavljacId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ArtiklCijena_Artikl">
           <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
           <End Role="ArtiklCijena" Type="Self.ArtiklCijena" Multiplicity="*" />
@@ -611,6 +624,10 @@
           <EntitySet Name="Skladiste" EntityType="Self.Skladiste" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trgovina" EntityType="Self.Trgovina" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VrstaKorisnika" EntityType="Self.VrstaKorisnika" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Artikl_Dobavljac" Association="Self.FK_Artikl_Dobavljac">
+            <End Role="Dobavljac" EntitySet="Dobavljac" />
+            <End Role="Artikl" EntitySet="Artikl" />
+          </AssociationSet>
           <AssociationSet Name="FK_ArtiklCijena_Artikl" Association="Self.FK_ArtiklCijena_Artikl">
             <End Role="Artikl" EntitySet="Artikl" />
             <End Role="ArtiklCijena" EntitySet="ArtiklCijena" />
@@ -752,6 +769,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="kategorija" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dobavljacId" Type="Int32" />
+          <NavigationProperty Name="Dobavljac" Relationship="Self.FK_Artikl_Dobavljac" FromRole="Artikl" ToRole="Dobavljac" />
           <NavigationProperty Name="ArtiklCijenas" Relationship="Self.FK_ArtiklCijena_Artikl" FromRole="Artikl" ToRole="ArtiklCijena" />
           <NavigationProperty Name="ArtiklNarudzbenicas" Relationship="Self.FK_ArtiklNarudzbenica_Artikl" FromRole="Artikl" ToRole="ArtiklNarudzbenica" />
           <NavigationProperty Name="ArtiklPovratnicas" Relationship="Self.FK_ArtiklPovratnica_Artikl" FromRole="Artikl" ToRole="ArtiklPovratnica" />
@@ -826,6 +845,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="adresa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Artikls" Relationship="Self.FK_Artikl_Dobavljac" FromRole="Dobavljac" ToRole="Artikl" />
           <NavigationProperty Name="ArtiklPrimkas" Relationship="Self.FK_ArtiklPrimka_Dobavljac" FromRole="Dobavljac" ToRole="ArtiklPrimka" />
           <NavigationProperty Name="Narudzbenicas" Relationship="Self.FK_Narudzbenica_Dobavljac" FromRole="Dobavljac" ToRole="Narudzbenica" />
           <NavigationProperty Name="Povratnicas" Relationship="Self.FK_Povratnica_Dobavljac" FromRole="Dobavljac" ToRole="Povratnica" />
@@ -999,6 +1019,18 @@
           <Property Name="oznaka" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Korisniks" Relationship="Self.FK_Korisnik_VrstaKorisnika" FromRole="VrstaKorisnika" ToRole="Korisnik" />
         </EntityType>
+        <Association Name="FK_Artikl_Dobavljac">
+          <End Role="Dobavljac" Type="Self.Dobavljac" Multiplicity="0..1" />
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobavljac">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Artikl">
+              <PropertyRef Name="dobavljacId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ArtiklCijena_Artikl">
           <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
           <End Role="ArtiklCijena" Type="Self.ArtiklCijena" Multiplicity="*" />
@@ -1384,6 +1416,10 @@
           <EntitySet Name="Skladistes" EntityType="Self.Skladiste" />
           <EntitySet Name="Trgovinas" EntityType="Self.Trgovina" />
           <EntitySet Name="VrstaKorisnikas" EntityType="Self.VrstaKorisnika" />
+          <AssociationSet Name="FK_Artikl_Dobavljac" Association="Self.FK_Artikl_Dobavljac">
+            <End Role="Dobavljac" EntitySet="Dobavljacs" />
+            <End Role="Artikl" EntitySet="Artikls" />
+          </AssociationSet>
           <AssociationSet Name="FK_ArtiklCijena_Artikl" Association="Self.FK_ArtiklCijena_Artikl">
             <End Role="Artikl" EntitySet="Artikls" />
             <End Role="ArtiklCijena" EntitySet="ArtiklCijenas" />
@@ -1521,6 +1557,7 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="kategorija" ColumnName="kategorija" />
+                <ScalarProperty Name="dobavljacId" ColumnName="dobavljacId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
