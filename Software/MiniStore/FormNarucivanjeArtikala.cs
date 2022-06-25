@@ -43,26 +43,20 @@ namespace MiniStore
 
         private void tbSIfraArtika_TextChanged(object sender, EventArgs e)
         {
-            List<Artikl> sviArtikli = new List<Artikl>();
-
-            using (var db = new Database())
-            {
-                sviArtikli = db.Artikls.ToList();
-            }
-
             if (tbSifraArtikla.Text.Length > 0)
             {
-                dgvPopisArtikala.DataSource = sviArtikli.Where(p => p.id.ToString().Contains(tbSifraArtikla.Text)).ToList();
+                dgvPopisArtikala.DataSource = artikli.Where(p => p.id.ToString().Contains(tbSifraArtikla.Text)).ToList();
             }
             else
             {
                 dgvPopisArtikala.DataSource = artikli;
             }
-
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            cbDobavljac.Enabled = false;
+
             var odabraniArtikl = dgvPopisArtikala.CurrentRow.DataBoundItem as Artikl;
             int kolicina = (int)nudKolicina.Value;
             if (kolicina < 1)
@@ -87,6 +81,14 @@ namespace MiniStore
         {
             stavkeNarudzbenice.RemoveAt(dgvStavkeNarudzbenice.CurrentRow.Index);
             OsvjeziDgvStavke();
+
+            if (stavkeNarudzbenice.Count < 1)
+            {
+                cbDobavljac.Enabled = true;
+            } else
+            {
+                cbDobavljac.Enabled = false;
+            }
         }
 
         void OsvjeziDgvStavke()
@@ -106,6 +108,35 @@ namespace MiniStore
                 }).ToList();
 
             }
+        }
+
+        private void btnGeneriraj_Click(object sender, EventArgs e)
+        {
+            var narudzbenica = new Narudzbenica
+            {
+                datumVrijeme = DateTime.Now,
+                dobavljacId = (cbDobavljac.SelectedItem as Dobavljac).id,
+                korisnikId = 1,
+                trgovinaId = TrgovinaId,
+            };
+
+            using (var db = new Database())
+            {
+                db.Narudzbenicas.Add(narudzbenica);
+                db.SaveChanges();
+
+                foreach (var stavka in stavkeNarudzbenice)
+                {
+                    stavka.narudzbenicaId = narudzbenica.id;
+                }
+
+                narudzbenica.ArtiklNarudzbenicas = stavkeNarudzbenice;
+
+                db.SaveChanges();
+            }
+
+            MessageBox.Show("Narudžbenica generirana!");
+            Close();
         }
     }
 }

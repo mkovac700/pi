@@ -189,6 +189,7 @@
             this.btnGeneriraj.TabIndex = 12;
             this.btnGeneriraj.Text = "Generiraj narudžbenicu";
             this.btnGeneriraj.UseVisualStyleBackColor = true;
+            this.btnGeneriraj.Click += new System.EventHandler(this.btnGeneriraj_Click);
             // 
             // dgvStavkeNarudzbenice
             // 
