@@ -102,12 +102,25 @@ namespace MiniStore
             var iznos = artikli.Sum(a => (decimal)1.25 * a.cijena * a.kolicina);
 
             lblIznos.Text = $"{iznos:C2}";
+            if(artikli.Count > 0)
+            {
+                btnUkloni.Enabled = true;
+            }else
+            {
+                btnUkloni.Enabled = false;
+            }
         }
 
         private void btnIzdajRacun_Click(object sender, EventArgs e)
         {
             if (lbNacinPlacanja.SelectedIndex == -1) {
                 MessageBox.Show("Način plaćanja nije odabran!");
+                return;
+            }
+
+            if (artikli.Count < 1)
+            {
+                MessageBox.Show("Račun ne sadrži niti jedan artikl!");
                 return;
             }
 
@@ -216,6 +229,17 @@ namespace MiniStore
             f.TrgovinaId = TrgovinaId;
             f.SkladisteId = SkladisteId;
             f.ShowDialog();
+        }
+
+        private void btnUkloni_Click(object sender, EventArgs e)
+        {
+            if (dgvStavkeRacuna.CurrentRow.Index == -1 || artikli.Count<1)
+            {
+                MessageBox.Show("Odaberite zapis za uklanjanje!");
+                return;
+            }
+            artikli.RemoveAt(dgvStavkeRacuna.CurrentRow.Index);
+            OsvjeziDgv();
         }
     }
 }

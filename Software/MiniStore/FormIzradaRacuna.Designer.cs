@@ -39,6 +39,7 @@
             this.lblIznos = new System.Windows.Forms.Label();
             this.lbNacinPlacanja = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnUkloni = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRacuna)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // tbSifraArtikla
             // 
             this.tbSifraArtikla.Location = new System.Drawing.Point(104, 49);
-            this.tbSifraArtikla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSifraArtikla.Margin = new System.Windows.Forms.Padding(4);
             this.tbSifraArtikla.Name = "tbSifraArtikla";
             this.tbSifraArtikla.Size = new System.Drawing.Size(216, 22);
             this.tbSifraArtikla.TabIndex = 1;
@@ -74,7 +75,7 @@
             // tbKolicina
             // 
             this.tbKolicina.Location = new System.Drawing.Point(104, 19);
-            this.tbKolicina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbKolicina.Margin = new System.Windows.Forms.Padding(4);
             this.tbKolicina.Name = "tbKolicina";
             this.tbKolicina.Size = new System.Drawing.Size(132, 22);
             this.tbKolicina.TabIndex = 3;
@@ -88,7 +89,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvStavkeRacuna.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeRacuna.Location = new System.Drawing.Point(13, 107);
-            this.dgvStavkeRacuna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvStavkeRacuna.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStavkeRacuna.Name = "dgvStavkeRacuna";
             this.dgvStavkeRacuna.ReadOnly = true;
             this.dgvStavkeRacuna.RowHeadersWidth = 51;
@@ -99,7 +100,7 @@
             // 
             this.btnStorniraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStorniraj.Location = new System.Drawing.Point(988, 502);
-            this.btnStorniraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStorniraj.Margin = new System.Windows.Forms.Padding(4);
             this.btnStorniraj.Name = "btnStorniraj";
             this.btnStorniraj.Size = new System.Drawing.Size(144, 57);
             this.btnStorniraj.TabIndex = 5;
@@ -111,7 +112,7 @@
             // 
             this.btnIzdajRacun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIzdajRacun.Location = new System.Drawing.Point(988, 567);
-            this.btnIzdajRacun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIzdajRacun.Margin = new System.Windows.Forms.Padding(4);
             this.btnIzdajRacun.Name = "btnIzdajRacun";
             this.btnIzdajRacun.Size = new System.Drawing.Size(144, 57);
             this.btnIzdajRacun.TabIndex = 6;
@@ -162,11 +163,23 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Način plaćanja:";
             // 
+            // btnUkloni
+            // 
+            this.btnUkloni.Enabled = false;
+            this.btnUkloni.Location = new System.Drawing.Point(988, 107);
+            this.btnUkloni.Name = "btnUkloni";
+            this.btnUkloni.Size = new System.Drawing.Size(144, 41);
+            this.btnUkloni.TabIndex = 11;
+            this.btnUkloni.Text = "Ukloni";
+            this.btnUkloni.UseVisualStyleBackColor = true;
+            this.btnUkloni.Click += new System.EventHandler(this.btnUkloni_Click);
+            // 
             // FormIzradaRacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 637);
+            this.Controls.Add(this.btnUkloni);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbNacinPlacanja);
             this.Controls.Add(this.lblIznos);
@@ -178,7 +191,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbSifraArtikla);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormIzradaRacuna";
             this.Text = "Izrada računa";
             this.Load += new System.EventHandler(this.FormIzradaRacuna_Load);
@@ -201,5 +214,6 @@
         private System.Windows.Forms.Label lblIznos;
         private System.Windows.Forms.ListBox lbNacinPlacanja;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnUkloni;
     }
 }
