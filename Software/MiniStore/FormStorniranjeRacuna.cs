@@ -46,12 +46,16 @@ namespace MiniStore
                     return;
                 }
 
-                if (racun.nacinPlacanja.Contains("STORNO"))
+                var stornoString = $"Storno računa {racun.id}";
+
+                if (db.Racuns.Count(r => r.nacinPlacanja.Contains(stornoString)) > 0)
                 {
                     MessageBox.Show("Ovaj račun je već bio storniran!");
                     tbRacunId.Clear();
                     return;
                 }
+
+               
 
                 var artikliRacuna = racun.RacunArtikls.Select(r => new
                 {
