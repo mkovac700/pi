@@ -33,12 +33,13 @@
             this.Kategorija = new System.Windows.Forms.Label();
             this.cbKategorija = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnIzvjesceUkupnogPoslovanja = new System.Windows.Forms.Button();
             this.btnIzvjesceArtikl = new System.Windows.Forms.Button();
             this.gbPrikazArtikala = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnIzvjestajKategorije = new System.Windows.Forms.Button();
-            this.btnIzvjesceUkupnogPoslovanja = new System.Windows.Forms.Button();
+            this.hpPomoc = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.gbPrikazArtikala.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,6 +94,17 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Promet ";
+            // 
+            // btnIzvjesceUkupnogPoslovanja
+            // 
+            this.btnIzvjesceUkupnogPoslovanja.Location = new System.Drawing.Point(7, 38);
+            this.btnIzvjesceUkupnogPoslovanja.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIzvjesceUkupnogPoslovanja.Name = "btnIzvjesceUkupnogPoslovanja";
+            this.btnIzvjesceUkupnogPoslovanja.Size = new System.Drawing.Size(273, 44);
+            this.btnIzvjesceUkupnogPoslovanja.TabIndex = 12;
+            this.btnIzvjesceUkupnogPoslovanja.Text = "Izvješće ukupnog poslovanja";
+            this.btnIzvjesceUkupnogPoslovanja.UseVisualStyleBackColor = true;
+            this.btnIzvjesceUkupnogPoslovanja.Click += new System.EventHandler(this.btnIzvjesceUkupnogPoslovanja_Click);
             // 
             // btnIzvjesceArtikl
             // 
@@ -151,16 +163,9 @@
             this.btnIzvjestajKategorije.UseVisualStyleBackColor = true;
             this.btnIzvjestajKategorije.Click += new System.EventHandler(this.btnIzvjestajKategorije_Click);
             // 
-            // btnIzvjesceUkupnogPoslovanja
+            // hpPomoc
             // 
-            this.btnIzvjesceUkupnogPoslovanja.Location = new System.Drawing.Point(7, 38);
-            this.btnIzvjesceUkupnogPoslovanja.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIzvjesceUkupnogPoslovanja.Name = "btnIzvjesceUkupnogPoslovanja";
-            this.btnIzvjesceUkupnogPoslovanja.Size = new System.Drawing.Size(273, 44);
-            this.btnIzvjesceUkupnogPoslovanja.TabIndex = 12;
-            this.btnIzvjesceUkupnogPoslovanja.Text = "Izvješće ukupnog poslovanja";
-            this.btnIzvjesceUkupnogPoslovanja.UseVisualStyleBackColor = true;
-            this.btnIzvjesceUkupnogPoslovanja.Click += new System.EventHandler(this.btnIzvjesceUkupnogPoslovanja_Click);
+            this.hpPomoc.HelpNamespace = "Help/help-statistika.chm";
             // 
             // FormStatistikaProdaje
             // 
@@ -171,10 +176,17 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gbPrikazArtikala);
             this.Controls.Add(this.groupBox1);
+            this.HelpButton = true;
+            this.hpPomoc.SetHelpString(this, "");
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormStatistikaProdaje";
+            this.hpPomoc.SetShowHelp(this, true);
             this.Text = "Statistika";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.FormStatistikaProdaje_HelpButtonClicked);
             this.Load += new System.EventHandler(this.FormStatistikaProdaje_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormStatistikaProdaje_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.gbPrikazArtikala.ResumeLayout(false);
             this.gbPrikazArtikala.PerformLayout();
@@ -197,5 +209,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnIzvjestajKategorije;
         private System.Windows.Forms.Button btnIzvjesceUkupnogPoslovanja;
+        private System.Windows.Forms.HelpProvider hpPomoc;
     }
 }

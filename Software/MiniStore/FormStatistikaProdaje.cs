@@ -138,7 +138,16 @@ namespace MiniStore
             f.ShowDialog();
         }
 
+        private void FormStatistikaProdaje_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help/help-statistika.chm");
 
+        }
+
+        private void FormStatistikaProdaje_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            Help.ShowHelp(this, "Help/help-statistika.chm");
+        }
     }
 }
 
