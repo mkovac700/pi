@@ -160,6 +160,12 @@
     <Compile Include="FormStatistikaProdajeKategorijazvjestaj.Designer.cs">
       <DependentUpon>FormStatistikaProdajeKategorijazvjestaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStatistikaProdajeUkupnoPoslovanjeIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatistikaProdajeUkupnoPoslovanjeIzvjestaj.Designer.cs">
+      <DependentUpon>FormStatistikaProdajeUkupnoPoslovanjeIzvjestaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStorniranjeRacuna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,7 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StatistikaProdajeArtikl.cs" />
     <Compile Include="StatistikaProdajeKategorija.cs" />
+    <Compile Include="StatistikaProdajeUkupnoPoslovanje.cs" />
     <Compile Include="Trgovina.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -290,6 +297,9 @@
     <EmbeddedResource Include="FormStatistikaProdajeKategorijazvjestaj.resx">
       <DependentUpon>FormStatistikaProdajeKategorijazvjestaj.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormStatistikaProdajeUkupnoPoslovanjeIzvjestaj.resx">
+      <DependentUpon>FormStatistikaProdajeUkupnoPoslovanjeIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStorniranjeRacuna.resx">
       <DependentUpon>FormStorniranjeRacuna.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +331,7 @@
     <EmbeddedResource Include="RacunIzvjestaj.rdlc" />
     <EmbeddedResource Include="StastikaProdajeKategorijaReport.rdlc" />
     <EmbeddedResource Include="StatistikaProdajeArtikalaReport.rdlc" />
+    <EmbeddedResource Include="StatistikaProdajeUkupnoReport.rdlc" />
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -340,6 +351,8 @@
     <None Include="Properties\DataSources\StatistikaProdajeKategorija.datasource" />
     <None Include="Properties\DataSources\StatistikaProdajeKategorijaStavkaTrgovina.datasource" />
     <None Include="Properties\DataSources\StatistikaProdajeKategorijaStavkaVrijeme.datasource" />
+    <None Include="Properties\DataSources\StatistikaProdajeUkupnoArtikli.datasource" />
+    <None Include="Properties\DataSources\StatistikaProdajeUkupnoKategorije.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

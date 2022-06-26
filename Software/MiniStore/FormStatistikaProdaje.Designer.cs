@@ -33,19 +33,12 @@
             this.Kategorija = new System.Windows.Forms.Label();
             this.cbKategorija = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbZaradaMjesec = new System.Windows.Forms.TextBox();
-            this.tbZaradaTjedan = new System.Windows.Forms.TextBox();
-            this.tbZaradaDan = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnIzvjesceArtikl = new System.Windows.Forms.Button();
             this.gbPrikazArtikala = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnIzvjestajKategorije = new System.Windows.Forms.Button();
-            this.btnIzvješćeKategorija = new System.Windows.Forms.Button();
-            this.btnIzvjestajArtikl = new System.Windows.Forms.Button();
+            this.btnIzvjesceUkupnogPoslovanja = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gbPrikazArtikala.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,77 +84,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbZaradaMjesec);
-            this.groupBox1.Controls.Add(this.tbZaradaTjedan);
-            this.groupBox1.Controls.Add(this.tbZaradaDan);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(27, 347);
+            this.groupBox1.Controls.Add(this.btnIzvjesceUkupnogPoslovanja);
+            this.groupBox1.Location = new System.Drawing.Point(26, 263);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(288, 128);
+            this.groupBox1.Size = new System.Drawing.Size(288, 97);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Zarada";
-            // 
-            // tbZaradaMjesec
-            // 
-            this.tbZaradaMjesec.Location = new System.Drawing.Point(89, 92);
-            this.tbZaradaMjesec.Margin = new System.Windows.Forms.Padding(4);
-            this.tbZaradaMjesec.Name = "tbZaradaMjesec";
-            this.tbZaradaMjesec.ReadOnly = true;
-            this.tbZaradaMjesec.Size = new System.Drawing.Size(132, 22);
-            this.tbZaradaMjesec.TabIndex = 5;
-            // 
-            // tbZaradaTjedan
-            // 
-            this.tbZaradaTjedan.Location = new System.Drawing.Point(89, 59);
-            this.tbZaradaTjedan.Margin = new System.Windows.Forms.Padding(4);
-            this.tbZaradaTjedan.Name = "tbZaradaTjedan";
-            this.tbZaradaTjedan.ReadOnly = true;
-            this.tbZaradaTjedan.Size = new System.Drawing.Size(132, 22);
-            this.tbZaradaTjedan.TabIndex = 4;
-            // 
-            // tbZaradaDan
-            // 
-            this.tbZaradaDan.Location = new System.Drawing.Point(89, 27);
-            this.tbZaradaDan.Margin = new System.Windows.Forms.Padding(4);
-            this.tbZaradaDan.Name = "tbZaradaDan";
-            this.tbZaradaDan.ReadOnly = true;
-            this.tbZaradaDan.Size = new System.Drawing.Size(132, 22);
-            this.tbZaradaDan.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 64);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Tjedna:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 96);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Mjesečna:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 31);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Današnja:";
+            this.groupBox1.Text = "Promet ";
             // 
             // btnIzvjesceArtikl
             // 
@@ -195,7 +126,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 31);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Statistike";
+            this.label2.Text = "Statistika";
             // 
             // groupBox2
             // 
@@ -220,33 +151,22 @@
             this.btnIzvjestajKategorije.UseVisualStyleBackColor = true;
             this.btnIzvjestajKategorije.Click += new System.EventHandler(this.btnIzvjestajKategorije_Click);
             // 
-            // btnIzvješćeKategorija
+            // btnIzvjesceUkupnogPoslovanja
             // 
-            this.btnIzvješćeKategorija.Location = new System.Drawing.Point(514, 226);
-            this.btnIzvješćeKategorija.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIzvješćeKategorija.Name = "btnIzvješćeKategorija";
-            this.btnIzvješćeKategorija.Size = new System.Drawing.Size(128, 28);
-            this.btnIzvješćeKategorija.TabIndex = 11;
-            this.btnIzvješćeKategorija.Text = "Izvješće sve kat.";
-            this.btnIzvješćeKategorija.UseVisualStyleBackColor = true;
-            // 
-            // btnIzvjestajArtikl
-            // 
-            this.btnIzvjestajArtikl.Location = new System.Drawing.Point(27, 226);
-            this.btnIzvjestajArtikl.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIzvjestajArtikl.Name = "btnIzvjestajArtikl";
-            this.btnIzvjestajArtikl.Size = new System.Drawing.Size(128, 28);
-            this.btnIzvjestajArtikl.TabIndex = 12;
-            this.btnIzvjestajArtikl.Text = "Izvješće svi artikli";
-            this.btnIzvjestajArtikl.UseVisualStyleBackColor = true;
+            this.btnIzvjesceUkupnogPoslovanja.Location = new System.Drawing.Point(7, 38);
+            this.btnIzvjesceUkupnogPoslovanja.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIzvjesceUkupnogPoslovanja.Name = "btnIzvjesceUkupnogPoslovanja";
+            this.btnIzvjesceUkupnogPoslovanja.Size = new System.Drawing.Size(273, 44);
+            this.btnIzvjesceUkupnogPoslovanja.TabIndex = 12;
+            this.btnIzvjesceUkupnogPoslovanja.Text = "Izvješće ukupnog poslovanja";
+            this.btnIzvjesceUkupnogPoslovanja.UseVisualStyleBackColor = true;
+            this.btnIzvjesceUkupnogPoslovanja.Click += new System.EventHandler(this.btnIzvjesceUkupnogPoslovanja_Click);
             // 
             // FormStatistikaProdaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 512);
-            this.Controls.Add(this.btnIzvjestajArtikl);
-            this.Controls.Add(this.btnIzvješćeKategorija);
+            this.ClientSize = new System.Drawing.Size(682, 391);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gbPrikazArtikala);
@@ -256,7 +176,6 @@
             this.Text = "Statistika";
             this.Load += new System.EventHandler(this.FormStatistikaProdaje_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.gbPrikazArtikala.ResumeLayout(false);
             this.gbPrikazArtikala.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -272,18 +191,11 @@
         private System.Windows.Forms.Label Kategorija;
         private System.Windows.Forms.ComboBox cbKategorija;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tbZaradaMjesec;
-        private System.Windows.Forms.TextBox tbZaradaTjedan;
-        private System.Windows.Forms.TextBox tbZaradaDan;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnIzvjesceArtikl;
         private System.Windows.Forms.GroupBox gbPrikazArtikala;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnIzvješćeKategorija;
         private System.Windows.Forms.Button btnIzvjestajKategorije;
-        private System.Windows.Forms.Button btnIzvjestajArtikl;
+        private System.Windows.Forms.Button btnIzvjesceUkupnogPoslovanja;
     }
 }

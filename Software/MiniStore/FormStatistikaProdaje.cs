@@ -75,7 +75,7 @@ namespace MiniStore
                 f.Podaci = new StatistikaProdajeKategorija
                 {
                     NazivKategorija = odabranaKategorija,
-                   
+
                     VolumenProdaje = db.RacunArtikls.Include("Artikl").Where(p => p.Artikl.kategorija == odabranaKategorija).Sum(p => p.kolicina),
                     ProdanaVrijednost = db.RacunArtikls.Include("Artikl").Where(p => p.Artikl.kategorija == odabranaKategorija).Sum(p => p.kolicina * p.cijena),
                     ProdajaPoKvartaluTrgovina = db.RacunArtikls.Include("Racun").Include("Artikl").Where(p => p.Artikl.kategorija == odabranaKategorija).Select(z => new StatistikaProdajeKategorijaStavkaTrgovina
@@ -95,5 +95,50 @@ namespace MiniStore
             f.ShowDialog();
 
         }
+
+        private void btnIzvjesceUkupnogPoslovanja_Click(object sender, EventArgs e)
+        {
+            FormStatistikaProdajeUkupnoPoslovanjeIzvjestaj f = new FormStatistikaProdajeUkupnoPoslovanjeIzvjestaj();
+            using (var db = new Database())
+            {
+
+                List<StatistikaProdajeUkupnoArtikli> artikliSum = new List<StatistikaProdajeUkupnoArtikli>();
+                List<StatistikaProdajeUkupnoKategorije> kategorijeSum = new List<StatistikaProdajeUkupnoKategorije>();
+                List<string> sveKategorije = new List<string>();
+                foreach (var item in db.Artikls)
+                {
+                    sveKategorije.Add(item.kategorija);
+                    artikliSum.Add(new StatistikaProdajeUkupnoArtikli
+                    {
+
+                        NazivArtikla = item.naziv,
+
+                        VolumenProdaje = db.RacunArtikls.Include("Artikl").Where(p => p.artiklId == item.id).Sum(p => p.kolicina)
+                    }); ;
+                }
+                foreach (var item in sveKategorije.Distinct())
+                {
+                    kategorijeSum.Add(new StatistikaProdajeUkupnoKategorije
+                    {
+                        NazivKategorije = item,
+                        VolumenProdaje = db.RacunArtikls.Include("Artikl").Where(p => p.Artikl.kategorija == item).Sum(p => p.kolicina)
+
+                    });
+                }
+
+                f.Podaci = new StatistikaProdajeUkupnoPoslovanje
+                {
+                    ProdajaArtikala = artikliSum.Where(p=>p.VolumenProdaje > 0).ToList(),
+                    ProdajaKategorija = kategorijeSum.Where(p=>p.VolumenProdaje >0).ToList(),
+
+                };
+
+
+            }
+            f.ShowDialog();
+        }
+
+
     }
 }
+
