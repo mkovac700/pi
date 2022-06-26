@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidacijaUnosa;
 
 namespace MiniStore
 {
@@ -27,6 +28,12 @@ namespace MiniStore
         {
             if (e.KeyCode != Keys.Enter)
             {
+                return;
+            }
+
+            if (tbSifraArtikla.Text.Length > 0 && !Validator.ProvjeriSifruArtikla(tbSifraArtikla.Text))
+            {
+                MessageBox.Show("Šifra artikla nije u ispravnom formatu! Dozvoljeni su samo brojevi.");
                 return;
             }
 

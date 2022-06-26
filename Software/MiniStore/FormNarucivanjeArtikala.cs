@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidacijaUnosa;
 
 namespace MiniStore
 {
@@ -57,13 +58,19 @@ namespace MiniStore
         {
             cbDobavljac.Enabled = false;
 
+            if (tbSifraArtikla.Text.Length > 0 && !Validator.ProvjeriSifruArtikla(tbSifraArtikla.Text))
+            {
+                MessageBox.Show("Šifra artikla nije u ispravnom formatu! Dozvoljeni su samo brojevi.");
+                return;
+            }
+
             var odabraniArtikl = dgvPopisArtikala.CurrentRow.DataBoundItem as Artikl;
             int kolicina = (int)nudKolicina.Value;
             if (kolicina < 1)
             {
                 MessageBox.Show("Količina nije ispravna!");
                 return;
-            }
+            }          
 
             if (stavkeNarudzbenice.Count(s => s.artiklId == odabraniArtikl.id) > 0)
             {

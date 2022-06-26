@@ -397,5 +397,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ValidacijaUnosa\ValidacijaUnosa.csproj">
+      <Project>{098281fd-e9da-479a-95c8-3014e20e27f6}</Project>
+      <Name>ValidacijaUnosa</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
