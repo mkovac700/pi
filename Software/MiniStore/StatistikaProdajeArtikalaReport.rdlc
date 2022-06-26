@@ -1082,9 +1082,10 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Statistika prodaje za artikl:</Value>
+                        <Value>STATISTIKA PRODAJE ZA ARTIKL:</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
+                          <TextDecoration>None</TextDecoration>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -1095,7 +1096,7 @@
                 <Top>0.26783cm</Top>
                 <Left>0.41764cm</Left>
                 <Height>0.6cm</Height>
-                <Width>5.802cm</Width>
+                <Width>7.58cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1121,8 +1122,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>NazivProizvoda</rd:DefaultName>
-                <Top>0.23256cm</Top>
-                <Left>6.21964cm</Left>
+                <Top>0.26783cm</Top>
+                <Left>9.12749cm</Left>
                 <Height>0.6cm</Height>
                 <Width>5.8655cm</Width>
                 <ZIndex>1</ZIndex>
