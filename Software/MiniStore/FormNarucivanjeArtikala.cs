@@ -79,7 +79,7 @@ namespace MiniStore
             }
 
             OsvjeziDgvStavke();
-            nudKolicina.Value = 0;
+            nudKolicina.Value = 1;
             tbSifraArtikla.Clear();
 
         }
@@ -116,10 +116,25 @@ namespace MiniStore
                 }).ToList();
 
             }
+            if (stavkeNarudzbenice.Count > 0)
+            {
+                btnUkloni.Enabled = true;
+            }
+            else
+            {
+                btnUkloni.Enabled = false;
+            }
         }
 
         private void btnGeneriraj_Click(object sender, EventArgs e)
         {
+            if (stavkeNarudzbenice.Count < 1)
+            {
+                MessageBox.Show("Narudžbenica nema niti jednu stavku dodanu!");
+                return;
+            }
+
+
             var narudzbenica = new Narudzbenica
             {
                 datumVrijeme = DateTime.Now,
@@ -155,6 +170,7 @@ namespace MiniStore
                     var trenutniKorisnik = db.Korisniks.First(k => k.id == 1);
                     f.Podaci = new NarudzbenicaIzvjestaj
                     {
+                        Sifra = narudzbenica.id,
                         NazivTrgovine = trenutnaTrgovina.oznaka,
                         AdresaTrgovine = trenutnaTrgovina.Lokacija.adresa + "\n" + trenutnaTrgovina.Lokacija.Grad.naziv,
                         NazivDobavljaca = trenutniDobavljac.naziv,
