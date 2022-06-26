@@ -102,10 +102,12 @@ namespace MiniStore
             var iznos = artikli.Sum(a => (decimal)1.25 * a.cijena * a.kolicina);
 
             lblIznos.Text = $"{iznos:C2}";
-            if(artikli.Count > 0)
+
+            if (artikli.Count > 0)
             {
                 btnUkloni.Enabled = true;
-            }else
+            }
+            else
             {
                 btnUkloni.Enabled = false;
             }
@@ -113,7 +115,8 @@ namespace MiniStore
 
         private void btnIzdajRacun_Click(object sender, EventArgs e)
         {
-            if (lbNacinPlacanja.SelectedIndex == -1) {
+            if (lbNacinPlacanja.SelectedIndex == -1)
+            {
                 MessageBox.Show("Način plaćanja nije odabran!");
                 return;
             }
@@ -163,6 +166,9 @@ namespace MiniStore
                     var trenutniKorisnik = db.Korisniks.First(k => k.id == 1);
                     f.Podaci = new RacunIzvjestaj
                     {
+                        SifraRacuna =racun.id,
+                        NacinPlacanja= racun.nacinPlacanja,
+                        
                         NazivTrgovine = trenutnaTrgovina.oznaka,
                         AdresaTrgovine = trenutnaTrgovina.Lokacija.adresa + "\n" + trenutnaTrgovina.Lokacija.Grad.naziv,
                         Datum = racun.datumVrijeme,
@@ -177,19 +183,13 @@ namespace MiniStore
                                 Kolicina = s.kolicina,
                                 Cijena = s.cijena,
                                 PDV = "25%",
-                                Iznos = s.kolicina*s.cijena*(decimal)1.25
-
-
+                                Iznos = s.kolicina * s.cijena * (decimal)1.25,
                             };
                         }).ToList(),
-
-
 
                     };
 
                 }
-
-
 
                 f.ShowDialog();
             }
@@ -198,14 +198,14 @@ namespace MiniStore
             {
                 foreach (var artikl in artikli)
                 {
-                    var trenutniArtikl= db.Artikls.Include("ArtiklSkladistes").First(p => p.id == artikl.artiklId);
+                    var trenutniArtikl = db.Artikls.Include("ArtiklSkladistes").First(p => p.id == artikl.artiklId);
                     var trenutnoSkladiste = trenutniArtikl.ArtiklSkladistes.First(s => s.skaldisteId == SkladisteId);
                     trenutnoSkladiste.kolicina -= artikl.kolicina;
                 }
 
                 db.SaveChanges();
             }
-            
+
 
             Close();
         }
@@ -233,7 +233,7 @@ namespace MiniStore
 
         private void btnUkloni_Click(object sender, EventArgs e)
         {
-            if (dgvStavkeRacuna.CurrentRow.Index == -1 || artikli.Count<1)
+            if (dgvStavkeRacuna.CurrentRow.Index == -1 || artikli.Count < 1)
             {
                 MessageBox.Show("Odaberite zapis za uklanjanje!");
                 return;
