@@ -460,7 +460,7 @@
             <DataSetName>StatistikaProdajeUkupnoArtikli</DataSetName>
             <Top>2.1717cm</Top>
             <Left>0.69003cm</Left>
-            <Height>6.88763cm</Height>
+            <Height>16.20096cm</Height>
             <Width>14.52033cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -819,9 +819,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>StatistikaProdajeUkupnoKategorije</DataSetName>
-            <Top>9.46785cm</Top>
+            <Top>18.84468cm</Top>
             <Left>0.69003cm</Left>
-            <Height>6.88763cm</Height>
+            <Height>10.25313cm</Height>
             <Width>14.52033cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -834,7 +834,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>7.8in</Height>
+        <Height>11.76667in</Height>
         <Style />
       </Body>
       <Width>6.5in</Width>

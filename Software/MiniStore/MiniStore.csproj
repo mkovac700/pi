@@ -336,6 +336,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Help\help-statistika.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
@@ -393,6 +396,12 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ValidacijaUnosa\ValidacijaUnosa.csproj">
+      <Project>{098281fd-e9da-479a-95c8-3014e20e27f6}</Project>
+      <Name>ValidacijaUnosa</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

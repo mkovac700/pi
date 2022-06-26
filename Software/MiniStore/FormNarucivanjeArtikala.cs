@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidacijaUnosa;
 
 namespace MiniStore
 {
@@ -57,13 +58,19 @@ namespace MiniStore
         {
             cbDobavljac.Enabled = false;
 
+            if (tbSifraArtikla.Text.Length > 0 && !Validator.ProvjeriSifruArtikla(tbSifraArtikla.Text))
+            {
+                MessageBox.Show("Šifra artikla nije u ispravnom formatu! Dozvoljeni su samo brojevi.");
+                return;
+            }
+
             var odabraniArtikl = dgvPopisArtikala.CurrentRow.DataBoundItem as Artikl;
             int kolicina = (int)nudKolicina.Value;
             if (kolicina < 1)
             {
                 MessageBox.Show("Količina nije ispravna!");
                 return;
-            }
+            }          
 
             if (stavkeNarudzbenice.Count(s => s.artiklId == odabraniArtikl.id) > 0)
             {
@@ -79,7 +86,7 @@ namespace MiniStore
             }
 
             OsvjeziDgvStavke();
-            nudKolicina.Value = 0;
+            nudKolicina.Value = 1;
             tbSifraArtikla.Clear();
 
         }
@@ -116,10 +123,25 @@ namespace MiniStore
                 }).ToList();
 
             }
+            if (stavkeNarudzbenice.Count > 0)
+            {
+                btnUkloni.Enabled = true;
+            }
+            else
+            {
+                btnUkloni.Enabled = false;
+            }
         }
 
         private void btnGeneriraj_Click(object sender, EventArgs e)
         {
+            if (stavkeNarudzbenice.Count < 1)
+            {
+                MessageBox.Show("Narudžbenica nema niti jednu stavku dodanu!");
+                return;
+            }
+
+
             var narudzbenica = new Narudzbenica
             {
                 datumVrijeme = DateTime.Now,
@@ -155,6 +177,7 @@ namespace MiniStore
                     var trenutniKorisnik = db.Korisniks.First(k => k.id == 1);
                     f.Podaci = new NarudzbenicaIzvjestaj
                     {
+                        Sifra = narudzbenica.id,
                         NazivTrgovine = trenutnaTrgovina.oznaka,
                         AdresaTrgovine = trenutnaTrgovina.Lokacija.adresa + "\n" + trenutnaTrgovina.Lokacija.Grad.naziv,
                         NazivDobavljaca = trenutniDobavljac.naziv,

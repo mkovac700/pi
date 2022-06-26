@@ -16,7 +16,8 @@ namespace MiniStore
         public List<RacunIzvjestajStavka> Stavke { get; set; }
         public decimal? Iznos { get; set; }
         public decimal? Porez { get; set; }
-
+        public int? SifraRacuna { get; set; }
+        
     }
 
     public class RacunIzvjestajStavka

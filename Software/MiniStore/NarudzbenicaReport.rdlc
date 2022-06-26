@@ -444,18 +444,87 @@
                 <Value>=First(Fields!DatumNarudzbenice.Value, "NarudzbenicaIzvjestaj")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Language>hr-HR</Language>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DatumNarudzbenice</rd:DefaultName>
+        <Top>2.72176cm</Top>
+        <Left>9.9187cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.9605cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Narudžbenica br.</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>DatumNarudzbenice</rd:DefaultName>
-        <Top>2.72176cm</Top>
-        <Left>11.3792cm</Left>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>2.67998cm</Top>
+        <Left>1.19803cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.09267cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Sifra">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!Sifra.Value, "NarudzbenicaIzvjestaj")</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Sifra</rd:DefaultName>
+        <Top>2.6447cm</Top>
+        <Left>4.43653cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -508,7 +577,7 @@
         </Field>
         <Field Name="DatumNarudzbenice">
           <DataField>DatumNarudzbenice</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
         <Field Name="ImeKorisnika">
           <DataField>ImeKorisnika</DataField>
@@ -521,6 +590,10 @@
         <Field Name="NazivTrgovine">
           <DataField>NazivTrgovine</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sifra">
+          <DataField>Sifra</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

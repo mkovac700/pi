@@ -171,6 +171,7 @@
             // 
             // btnUkloni
             // 
+            this.btnUkloni.Enabled = false;
             this.btnUkloni.Location = new System.Drawing.Point(909, 500);
             this.btnUkloni.Margin = new System.Windows.Forms.Padding(4);
             this.btnUkloni.Name = "btnUkloni";
@@ -207,9 +208,24 @@
             // nudKolicina
             // 
             this.nudKolicina.Location = new System.Drawing.Point(168, 533);
+            this.nudKolicina.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.nudKolicina.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudKolicina.Name = "nudKolicina";
             this.nudKolicina.Size = new System.Drawing.Size(120, 22);
             this.nudKolicina.TabIndex = 14;
+            this.nudKolicina.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // idDataGridViewTextBoxColumn
             // 

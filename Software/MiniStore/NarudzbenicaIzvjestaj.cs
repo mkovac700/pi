@@ -15,6 +15,7 @@ namespace MiniStore
         public DateTime? DatumNarudzbenice { get; set; }
         public string ImeKorisnika { get; set; }
         public List<NarudzbenicaIzvjestajStavka> Artikli { get; set; }
+        public int Sifra { get; set; }
 
 
     }

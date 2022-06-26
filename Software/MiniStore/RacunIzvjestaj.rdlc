@@ -84,7 +84,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>2.80866cm</Top>
+        <Top>4.39616cm</Top>
         <Left>5.2832cm</Left>
         <Height>0.42871cm</Height>
         <Width>2.5cm</Width>
@@ -119,7 +119,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Datum</rd:DefaultName>
-        <Top>3.23737cm</Top>
+        <Top>4.82487cm</Top>
         <Left>3.807cm</Left>
         <Height>0.6cm</Height>
         <Width>3.9762cm</Width>
@@ -153,7 +153,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>2.80866cm</Top>
+        <Top>4.39616cm</Top>
         <Left>0.5842cm</Left>
         <Height>0.42871cm</Height>
         <Width>2.5cm</Width>
@@ -185,7 +185,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Blagajnik</rd:DefaultName>
-        <Top>3.23737cm</Top>
+        <Top>4.82487cm</Top>
         <Left>0.5842cm</Left>
         <Height>0.6cm</Height>
         <Width>3.04641cm</Width>
@@ -201,7 +201,7 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>4.0714cm</Top>
+        <Top>5.6589cm</Top>
         <Left>0.5842cm</Left>
         <Height>0cm</Height>
         <Width>7.199cm</Width>
@@ -689,7 +689,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>RacunIzvjestajStavka</DataSetName>
-        <Top>4.31408cm</Top>
+        <Top>5.90158cm</Top>
         <Left>0.5842cm</Left>
         <Height>2.22501cm</Height>
         <Width>7.19899cm</Width>
@@ -701,7 +701,7 @@
         </Style>
       </Tablix>
       <Line Name="Line2">
-        <Top>6.76134cm</Top>
+        <Top>8.34884cm</Top>
         <Left>0.5842cm</Left>
         <Height>0cm</Height>
         <Width>7.199cm</Width>
@@ -729,7 +729,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox45</rd:DefaultName>
-        <Top>8.49848cm</Top>
+        <Top>10.08598cm</Top>
         <Left>0.5842cm</Left>
         <Height>0.6cm</Height>
         <Width>7.199cm</Width>
@@ -761,7 +761,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>7.04108cm</Top>
+        <Top>8.62858cm</Top>
         <Left>4.49271cm</Left>
         <Height>0.48988cm</Height>
         <Width>1.64524cm</Width>
@@ -793,7 +793,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>7.53096cm</Top>
+        <Top>9.11846cm</Top>
         <Left>4.49271cm</Left>
         <Height>0.48988cm</Height>
         <Width>1.64524cm</Width>
@@ -827,7 +827,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
-        <Top>7.04108cm</Top>
+        <Top>8.62858cm</Top>
         <Left>6.13795cm</Left>
         <Height>0.48988cm</Height>
         <Width>1.64524cm</Width>
@@ -863,7 +863,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Iznos1</rd:DefaultName>
-        <Top>7.53096cm</Top>
+        <Top>9.11846cm</Top>
         <Left>6.17324cm</Left>
         <Height>0.4546cm</Height>
         <Width>1.60996cm</Width>
@@ -879,7 +879,7 @@
         </Style>
       </Textbox>
       <Line Name="Line3">
-        <Top>8.32209cm</Top>
+        <Top>9.90959cm</Top>
         <Left>0.5842cm</Left>
         <Height>0cm</Height>
         <Width>7.199cm</Width>
@@ -922,8 +922,144 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Način plaćanja:</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>2.82276cm</Top>
+        <Left>5.28319cm</Left>
+        <Height>0.42871cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Br. računa:</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>2.82276cm</Top>
+        <Left>0.58419cm</Left>
+        <Height>0.42871cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="SifraRacuna">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!SifraRacuna.Value, "RacunIzvjestaj")</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>SifraRacuna</rd:DefaultName>
+        <Top>3.32203cm</Top>
+        <Left>0.58419cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.04642cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NacinPlacanja">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!NacinPlacanja.Value, "RacunIzvjestaj")</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NacinPlacanja</rd:DefaultName>
+        <Top>3.32203cm</Top>
+        <Left>4.49271cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.29048cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.76643in</Height>
+    <Height>4.39143in</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
@@ -971,6 +1107,10 @@
           <DataField>Datum</DataField>
           <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="Iznos">
+          <DataField>Iznos</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="NacinPlacanja">
           <DataField>NacinPlacanja</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -978,6 +1118,14 @@
         <Field Name="NazivTrgovine">
           <DataField>NazivTrgovine</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Porez">
+          <DataField>Porez</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="SifraRacuna">
+          <DataField>SifraRacuna</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
