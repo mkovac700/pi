@@ -148,6 +148,18 @@
     <Compile Include="FormStatistikaProdaje.Designer.cs">
       <DependentUpon>FormStatistikaProdaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStatistikaProdajeArtiklIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatistikaProdajeArtiklIzvjestaj.Designer.cs">
+      <DependentUpon>FormStatistikaProdajeArtiklIzvjestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStatistikaProdajeKategorijazvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatistikaProdajeKategorijazvjestaj.Designer.cs">
+      <DependentUpon>FormStatistikaProdajeKategorijazvjestaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStorniranjeRacuna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +249,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StatistikaProdajeArtikl.cs" />
     <Compile Include="Trgovina.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -270,6 +283,12 @@
     <EmbeddedResource Include="FormStatistikaProdaje.resx">
       <DependentUpon>FormStatistikaProdaje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormStatistikaProdajeArtiklIzvjestaj.resx">
+      <DependentUpon>FormStatistikaProdajeArtiklIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStatistikaProdajeKategorijazvjestaj.resx">
+      <DependentUpon>FormStatistikaProdajeKategorijazvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStorniranjeRacuna.resx">
       <DependentUpon>FormStorniranjeRacuna.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +318,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="RacunIzvjestaj.rdlc" />
+    <EmbeddedResource Include="StastikaProdajeKategorijaReport.rdlc" />
+    <EmbeddedResource Include="StatistikaProdajeArtikalaReport.rdlc" />
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -312,6 +333,9 @@
     <None Include="Properties\DataSources\NarudzbenicaIzvjestajStavka.datasource" />
     <None Include="Properties\DataSources\RacunIzvjestaj.datasource" />
     <None Include="Properties\DataSources\RacunIzvjestajStavka.datasource" />
+    <None Include="Properties\DataSources\StatistikaProdajeArtikl.datasource" />
+    <None Include="Properties\DataSources\StatistikaProdajeArtiklStavkaTrgovina.datasource" />
+    <None Include="Properties\DataSources\StatistikaProdajeArtiklStavkaVrijeme.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

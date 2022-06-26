@@ -55,6 +55,7 @@ namespace MiniStore
         private void btnStatistikaProdaje_Click(object sender, EventArgs e)
         {
             FormStatistikaProdaje formStatistikaProdaje = new FormStatistikaProdaje();
+            formStatistikaProdaje.TrgovinaId = trenutnaTrgovinaId;
             formStatistikaProdaje.Show();
         }
 
