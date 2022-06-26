@@ -67,8 +67,32 @@ namespace MiniStore
 
         private void btnIzvjestajKategorije_Click(object sender, EventArgs e)
         {
-            var odabranaKategorija = cbKategorija.SelectedItem;
-            FormStatistikaProdajeArtiklIzvjestaj f = new FormStatistikaProdajeArtiklIzvjestaj();
+            var odabranaKategorija = cbKategorija.SelectedItem as string;
+            FormStatistikaProdajeKategorijazvjestaj f = new FormStatistikaProdajeKategorijazvjestaj();
+            using (var db = new Database())
+            {
+
+                f.Podaci = new StatistikaProdajeKategorija
+                {
+                    NazivKategorija = odabranaKategorija,
+                   
+                    VolumenProdaje = db.RacunArtikls.Include("Artikl").Where(p => p.Artikl.kategorija == odabranaKategorija).Sum(p => p.kolicina),
+                    ProdanaVrijednost = db.RacunArtikls.Include("Artikl").Where(p => p.Artikl.kategorija == odabranaKategorija).Sum(p => p.kolicina * p.cijena),
+                    ProdajaPoKvartaluTrgovina = db.RacunArtikls.Include("Racun").Include("Artikl").Where(p => p.Artikl.kategorija == odabranaKategorija).Select(z => new StatistikaProdajeKategorijaStavkaTrgovina
+                    {
+                        NazivTrgovine = z.Racun.Trgovina.oznaka,
+                        VolumenProdaje = z.kolicina,
+                    }).ToList(),
+                    ProdajaPoKvartaluVrijeme = db.RacunArtikls.Include("Racun").Include("Artikl").Where(p => p.Artikl.kategorija == odabranaKategorija).Select(z => new StatistikaProdajeKategorijaStavkaVrijeme
+                    {
+                        DatumRacuna = z.Racun.datumVrijeme,
+                        VolumenProdaje = z.kolicina,
+                    }).ToList(),
+                };
+
+            }
+
+            f.ShowDialog();
 
         }
     }

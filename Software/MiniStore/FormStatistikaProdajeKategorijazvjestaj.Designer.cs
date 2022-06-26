@@ -34,6 +34,7 @@
             // rvIzvjestaj
             // 
             this.rvIzvjestaj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvIzvjestaj.LocalReport.ReportEmbeddedResource = "MiniStore.StastikaProdajeKategorijaReport.rdlc";
             this.rvIzvjestaj.Location = new System.Drawing.Point(0, 0);
             this.rvIzvjestaj.Name = "rvIzvjestaj";
             this.rvIzvjestaj.ServerReport.BearerToken = null;
