@@ -22,5 +22,10 @@ namespace MiniStore
             GlavnaForma glavnaForma = new GlavnaForma();
             glavnaForma.ShowDialog();
         }
+
+        private void FormPrijava_Load(object sender, EventArgs e)
+        {
+            //random test
+        }
     }
 }
