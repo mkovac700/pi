@@ -91,6 +91,7 @@
     <Compile Include="ArtiklSkladiste.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Autentifikator.cs" />
     <Compile Include="Dobavljac.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

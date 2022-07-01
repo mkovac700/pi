@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbpGumbi = new System.Windows.Forms.TableLayoutPanel();
             this.btnIzradaPovratnice = new System.Windows.Forms.Button();
             this.btnUpravljanjeSatnicom = new System.Windows.Forms.Button();
@@ -38,6 +39,10 @@
             this.btnZaprimanjeArtikala = new System.Windows.Forms.Button();
             this.btnUpravljanjeArtiklima = new System.Windows.Forms.Button();
             this.lblPoslovnica = new System.Windows.Forms.Label();
+            this.lblKorisnik = new System.Windows.Forms.Label();
+            this.lblVrijeme = new System.Windows.Forms.Label();
+            this.btnOdjava = new System.Windows.Forms.Button();
+            this.timerTrenutnoVrijeme = new System.Windows.Forms.Timer(this.components);
             this.tbpGumbi.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,14 +62,13 @@
             this.tbpGumbi.Controls.Add(this.btnNarucivanjeArtikala, 2, 0);
             this.tbpGumbi.Controls.Add(this.btnZaprimanjeArtikala, 1, 0);
             this.tbpGumbi.Controls.Add(this.btnUpravljanjeArtiklima, 0, 0);
-            this.tbpGumbi.Location = new System.Drawing.Point(29, 68);
-            this.tbpGumbi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpGumbi.Location = new System.Drawing.Point(26, 70);
             this.tbpGumbi.Name = "tbpGumbi";
             this.tbpGumbi.RowCount = 3;
             this.tbpGumbi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tbpGumbi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tbpGumbi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tbpGumbi.Size = new System.Drawing.Size(666, 268);
+            this.tbpGumbi.Size = new System.Drawing.Size(502, 218);
             this.tbpGumbi.TabIndex = 0;
             // 
             // btnIzradaPovratnice
@@ -73,10 +77,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIzradaPovratnice.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnIzradaPovratnice.Location = new System.Drawing.Point(226, 183);
-            this.btnIzradaPovratnice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIzradaPovratnice.Location = new System.Drawing.Point(171, 148);
             this.btnIzradaPovratnice.Name = "btnIzradaPovratnice";
-            this.btnIzradaPovratnice.Size = new System.Drawing.Size(212, 80);
+            this.btnIzradaPovratnice.Size = new System.Drawing.Size(160, 66);
             this.btnIzradaPovratnice.TabIndex = 7;
             this.btnIzradaPovratnice.Text = "Izrada povratnice";
             this.btnIzradaPovratnice.UseVisualStyleBackColor = true;
@@ -87,10 +90,9 @@
             this.btnUpravljanjeSatnicom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpravljanjeSatnicom.Location = new System.Drawing.Point(5, 183);
-            this.btnUpravljanjeSatnicom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpravljanjeSatnicom.Location = new System.Drawing.Point(4, 148);
             this.btnUpravljanjeSatnicom.Name = "btnUpravljanjeSatnicom";
-            this.btnUpravljanjeSatnicom.Size = new System.Drawing.Size(212, 80);
+            this.btnUpravljanjeSatnicom.Size = new System.Drawing.Size(160, 66);
             this.btnUpravljanjeSatnicom.TabIndex = 6;
             this.btnUpravljanjeSatnicom.Text = "Upravljanje satnicom";
             this.btnUpravljanjeSatnicom.UseVisualStyleBackColor = true;
@@ -101,10 +103,9 @@
             this.btnStatistikaProdaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStatistikaProdaje.Location = new System.Drawing.Point(447, 94);
-            this.btnStatistikaProdaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatistikaProdaje.Location = new System.Drawing.Point(338, 76);
             this.btnStatistikaProdaje.Name = "btnStatistikaProdaje";
-            this.btnStatistikaProdaje.Size = new System.Drawing.Size(214, 80);
+            this.btnStatistikaProdaje.Size = new System.Drawing.Size(160, 65);
             this.btnStatistikaProdaje.TabIndex = 5;
             this.btnStatistikaProdaje.Text = "Statistika prodaje";
             this.btnStatistikaProdaje.UseVisualStyleBackColor = true;
@@ -115,10 +116,9 @@
             this.btnInventura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInventura.Location = new System.Drawing.Point(226, 94);
-            this.btnInventura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInventura.Location = new System.Drawing.Point(171, 76);
             this.btnInventura.Name = "btnInventura";
-            this.btnInventura.Size = new System.Drawing.Size(212, 80);
+            this.btnInventura.Size = new System.Drawing.Size(160, 65);
             this.btnInventura.TabIndex = 4;
             this.btnInventura.Text = "Inventura";
             this.btnInventura.UseVisualStyleBackColor = true;
@@ -129,10 +129,9 @@
             this.btnRacun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRacun.Location = new System.Drawing.Point(5, 94);
-            this.btnRacun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRacun.Location = new System.Drawing.Point(4, 76);
             this.btnRacun.Name = "btnRacun";
-            this.btnRacun.Size = new System.Drawing.Size(212, 80);
+            this.btnRacun.Size = new System.Drawing.Size(160, 65);
             this.btnRacun.TabIndex = 3;
             this.btnRacun.Text = "Račun";
             this.btnRacun.UseVisualStyleBackColor = true;
@@ -143,10 +142,9 @@
             this.btnNarucivanjeArtikala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNarucivanjeArtikala.Location = new System.Drawing.Point(447, 5);
-            this.btnNarucivanjeArtikala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNarucivanjeArtikala.Location = new System.Drawing.Point(338, 4);
             this.btnNarucivanjeArtikala.Name = "btnNarucivanjeArtikala";
-            this.btnNarucivanjeArtikala.Size = new System.Drawing.Size(214, 80);
+            this.btnNarucivanjeArtikala.Size = new System.Drawing.Size(160, 65);
             this.btnNarucivanjeArtikala.TabIndex = 2;
             this.btnNarucivanjeArtikala.Text = "Naručivanje artikala";
             this.btnNarucivanjeArtikala.UseVisualStyleBackColor = true;
@@ -157,10 +155,9 @@
             this.btnZaprimanjeArtikala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnZaprimanjeArtikala.Location = new System.Drawing.Point(226, 5);
-            this.btnZaprimanjeArtikala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnZaprimanjeArtikala.Location = new System.Drawing.Point(171, 4);
             this.btnZaprimanjeArtikala.Name = "btnZaprimanjeArtikala";
-            this.btnZaprimanjeArtikala.Size = new System.Drawing.Size(212, 80);
+            this.btnZaprimanjeArtikala.Size = new System.Drawing.Size(160, 65);
             this.btnZaprimanjeArtikala.TabIndex = 1;
             this.btnZaprimanjeArtikala.Text = "Zaprimanje artikala";
             this.btnZaprimanjeArtikala.UseVisualStyleBackColor = true;
@@ -171,10 +168,9 @@
             this.btnUpravljanjeArtiklima.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpravljanjeArtiklima.Location = new System.Drawing.Point(5, 5);
-            this.btnUpravljanjeArtiklima.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpravljanjeArtiklima.Location = new System.Drawing.Point(4, 4);
             this.btnUpravljanjeArtiklima.Name = "btnUpravljanjeArtiklima";
-            this.btnUpravljanjeArtiklima.Size = new System.Drawing.Size(212, 80);
+            this.btnUpravljanjeArtiklima.Size = new System.Drawing.Size(160, 65);
             this.btnUpravljanjeArtiklima.TabIndex = 0;
             this.btnUpravljanjeArtiklima.Text = "Upravljanje artiklima";
             this.btnUpravljanjeArtiklima.UseVisualStyleBackColor = true;
@@ -183,20 +179,59 @@
             // lblPoslovnica
             // 
             this.lblPoslovnica.AutoSize = true;
-            this.lblPoslovnica.Location = new System.Drawing.Point(31, 23);
+            this.lblPoslovnica.Location = new System.Drawing.Point(27, 41);
+            this.lblPoslovnica.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPoslovnica.Name = "lblPoslovnica";
-            this.lblPoslovnica.Size = new System.Drawing.Size(77, 16);
+            this.lblPoslovnica.Size = new System.Drawing.Size(62, 13);
             this.lblPoslovnica.TabIndex = 2;
             this.lblPoslovnica.Text = "Poslovnica:";
             // 
+            // lblKorisnik
+            // 
+            this.lblKorisnik.AutoSize = true;
+            this.lblKorisnik.Location = new System.Drawing.Point(27, 19);
+            this.lblKorisnik.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKorisnik.Name = "lblKorisnik";
+            this.lblKorisnik.Size = new System.Drawing.Size(47, 13);
+            this.lblKorisnik.TabIndex = 3;
+            this.lblKorisnik.Text = "Korisnik:";
+            // 
+            // lblVrijeme
+            // 
+            this.lblVrijeme.Location = new System.Drawing.Point(290, 19);
+            this.lblVrijeme.Name = "lblVrijeme";
+            this.lblVrijeme.Size = new System.Drawing.Size(234, 13);
+            this.lblVrijeme.TabIndex = 4;
+            this.lblVrijeme.Text = "Dohvacam vrijeme...";
+            this.lblVrijeme.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOdjava.Location = new System.Drawing.Point(453, 314);
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(75, 23);
+            this.btnOdjava.TabIndex = 5;
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
+            // 
+            // timerTrenutnoVrijeme
+            // 
+            this.timerTrenutnoVrijeme.Enabled = true;
+            this.timerTrenutnoVrijeme.Interval = 1000;
+            this.timerTrenutnoVrijeme.Tick += new System.EventHandler(this.timerTrenutnoVrijeme_Tick);
+            // 
             // GlavnaForma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 381);
+            this.ClientSize = new System.Drawing.Size(546, 349);
+            this.Controls.Add(this.btnOdjava);
+            this.Controls.Add(this.lblVrijeme);
+            this.Controls.Add(this.lblKorisnik);
             this.Controls.Add(this.lblPoslovnica);
             this.Controls.Add(this.tbpGumbi);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GlavnaForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MiniStore";
@@ -219,5 +254,9 @@
         private System.Windows.Forms.Button btnNarucivanjeArtikala;
         private System.Windows.Forms.Button btnZaprimanjeArtikala;
         private System.Windows.Forms.Label lblPoslovnica;
+        private System.Windows.Forms.Label lblKorisnik;
+        private System.Windows.Forms.Label lblVrijeme;
+        private System.Windows.Forms.Button btnOdjava;
+        private System.Windows.Forms.Timer timerTrenutnoVrijeme;
     }
 }
