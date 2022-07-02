@@ -20,6 +20,7 @@ namespace MiniStore
         public Nullable<int> skladisteId { get; set; }
         public Nullable<int> kolicina { get; set; }
         public Nullable<decimal> cijena { get; set; }
+        public Nullable<byte> zaprimljeno { get; set; }
     
         public virtual Artikl Artikl { get; set; }
         public virtual Dobavljac Dobavljac { get; set; }

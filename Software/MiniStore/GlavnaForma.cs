@@ -71,6 +71,11 @@ namespace MiniStore
             formIzradaPovratnice.Show();
         }
 
+        private void btnPostavke_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void GlavnaForma_Load(object sender, EventArgs e)
         {
             if (Autentifikator.DohvatiPrijavljenogKorisnika() != null) {
@@ -126,11 +131,11 @@ namespace MiniStore
                 btnUpravljanjeArtiklima.Enabled = true; //funkcionalnost podijeliti na dvije opcije: voditelj moze obavljati CRUD nad ArtiklSkladiste, dok superuser nad Artikl + ArtiklCijena
                 btnInventura.Enabled = true;
                 btnStatistikaProdaje.Enabled = true;
-                //postavke (dodati gumb)
+                btnPostavke.Enabled = true; //isto napraviti dvostruki pristup
             }
             if (razina == 1) //admin
             {
-                //postavke (dodati gumb)
+                //postavke + upravljanje artiklima (enableano i voditelju)
             }
         }
     }

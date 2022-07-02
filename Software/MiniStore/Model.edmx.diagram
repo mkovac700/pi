@@ -57,6 +57,7 @@
         <AssociationConnector Association="PI2213_DBModel.FK_RacunArtikl_Racun" ManuallyRouted="false" />
         <AssociationConnector Association="PI2213_DBModel.FK_Skladiste_Trgovina" ManuallyRouted="false" />
         <AssociationConnector Association="PI2213_DBModel.KorisnikTrgovina" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2213_DBModel.FK_ArtiklPovratnica_Povratnica" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
