@@ -14,6 +14,12 @@ namespace MiniStore
     
     public partial class Povratnica
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Povratnica()
+        {
+            this.ArtiklPovratnicas = new HashSet<ArtiklPovratnica>();
+        }
+    
         public int id { get; set; }
         public Nullable<System.DateTime> datumVrijeme { get; set; }
         public Nullable<int> dobavljacId { get; set; }
@@ -24,5 +30,7 @@ namespace MiniStore
         public virtual Korisnik Korisnik { get; set; }
         public virtual Trgovina Trgovina { get; set; }
         public virtual Trgovina Trgovina1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ArtiklPovratnica> ArtiklPovratnicas { get; set; }
     }
 }

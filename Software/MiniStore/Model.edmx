@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PI2213_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PI2213_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Artikl">
           <Key>
             <PropertyRef Name="id" />
@@ -54,6 +54,7 @@
           <Property Name="skladisteId" Type="int" />
           <Property Name="kolicina" Type="int" />
           <Property Name="cijena" Type="money" />
+          <Property Name="zaprimljeno" Type="tinyint" />
         </EntityType>
         <EntityType Name="ArtiklSkladiste">
           <Key>
@@ -108,6 +109,8 @@
           <Property Name="korisnickoIme" Type="nvarchar" MaxLength="255" />
           <Property Name="lozinka" Type="nvarchar" MaxLength="255" />
           <Property Name="vrstaKorisnika" Type="int" />
+          <Property Name="registriran" Type="tinyint" />
+          <Property Name="kod" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="KorisnikTrgovina">
           <Key>
@@ -153,6 +156,7 @@
           <Property Name="dobavljacId" Type="int" />
           <Property Name="skladisteId" Type="int" />
           <Property Name="datumVrijeme" Type="datetime" />
+          <Property Name="zaprimljeno" Type="tinyint" />
         </EntityType>
         <EntityType Name="Racun">
           <Key>
@@ -263,6 +267,18 @@
             </Principal>
             <Dependent Role="ArtiklPovratnica">
               <PropertyRef Name="artiklId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArtiklPovratnica_Povratnica">
+          <End Role="Povratnica" Type="Self.Povratnica" Multiplicity="1" />
+          <End Role="ArtiklPovratnica" Type="Self.ArtiklPovratnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Povratnica">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ArtiklPovratnica">
+              <PropertyRef Name="povratnicaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -644,6 +660,10 @@
             <End Role="Artikl" EntitySet="Artikl" />
             <End Role="ArtiklPovratnica" EntitySet="ArtiklPovratnica" />
           </AssociationSet>
+          <AssociationSet Name="FK_ArtiklPovratnica_Povratnica" Association="Self.FK_ArtiklPovratnica_Povratnica">
+            <End Role="Povratnica" EntitySet="Povratnica" />
+            <End Role="ArtiklPovratnica" EntitySet="ArtiklPovratnica" />
+          </AssociationSet>
           <AssociationSet Name="FK_ArtiklPrimka_Artikl" Association="Self.FK_ArtiklPrimka_Artikl">
             <End Role="Artikl" EntitySet="Artikl" />
             <End Role="ArtiklPrimka" EntitySet="ArtiklPrimka" />
@@ -757,8 +777,7 @@
             <End Role="Trgovina" EntitySet="Trgovina" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PI2213_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -810,6 +829,7 @@
           <Property Name="kolicina" Type="Int32" />
           <Property Name="cijena" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="Artikl" Relationship="Self.FK_ArtiklPovratnica_Artikl" FromRole="ArtiklPovratnica" ToRole="Artikl" />
+          <NavigationProperty Name="Povratnica" Relationship="PI2213_DBModel.FK_ArtiklPovratnica_Povratnica" FromRole="ArtiklPovratnica" ToRole="Povratnica" />
         </EntityType>
         <EntityType Name="ArtiklPrimka">
           <Key>
@@ -826,6 +846,7 @@
           <NavigationProperty Name="Dobavljac" Relationship="Self.FK_ArtiklPrimka_Dobavljac" FromRole="ArtiklPrimka" ToRole="Dobavljac" />
           <NavigationProperty Name="Primka" Relationship="Self.FK_ArtiklPrimka_Primka" FromRole="ArtiklPrimka" ToRole="Primka" />
           <NavigationProperty Name="Skladiste" Relationship="Self.FK_ArtiklPrimka_Skladiste" FromRole="ArtiklPrimka" ToRole="Skladiste" />
+          <Property Name="zaprimljeno" Type="Byte" />
         </EntityType>
         <EntityType Name="ArtiklSkladiste">
           <Key>
@@ -897,6 +918,8 @@
           <NavigationProperty Name="Racuns" Relationship="Self.FK_Racun_Korisnik" FromRole="Korisnik" ToRole="Racun" />
           <NavigationProperty Name="Satnicas" Relationship="Self.FK_Satnica_Korisnik" FromRole="Korisnik" ToRole="Satnica" />
           <NavigationProperty Name="Trgovinas" Relationship="Self.KorisnikTrgovina" FromRole="Korisnik" ToRole="Trgovina" />
+          <Property Name="registriran" Type="Byte" />
+          <Property Name="kod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Lokacija">
           <Key>
@@ -935,6 +958,7 @@
           <NavigationProperty Name="Korisnik" Relationship="Self.FK_Povratnica_Korisnik" FromRole="Povratnica" ToRole="Korisnik" />
           <NavigationProperty Name="Trgovina" Relationship="Self.FK_Povratnica_Trgovina" FromRole="Povratnica" ToRole="Trgovina" />
           <NavigationProperty Name="Trgovina1" Relationship="Self.FK_Povratnica_Trgovina1" FromRole="Povratnica" ToRole="Trgovina" />
+          <NavigationProperty Name="ArtiklPovratnicas" Relationship="PI2213_DBModel.FK_ArtiklPovratnica_Povratnica" FromRole="Povratnica" ToRole="ArtiklPovratnica" />
         </EntityType>
         <EntityType Name="Primka">
           <Key>
@@ -947,6 +971,7 @@
           <NavigationProperty Name="ArtiklPrimkas" Relationship="Self.FK_ArtiklPrimka_Primka" FromRole="Primka" ToRole="ArtiklPrimka" />
           <NavigationProperty Name="Dobavljac" Relationship="Self.FK_Primka_Dobavljac" FromRole="Primka" ToRole="Dobavljac" />
           <NavigationProperty Name="Skladiste" Relationship="Self.FK_Primka_Skladiste" FromRole="Primka" ToRole="Skladiste" />
+          <Property Name="zaprimljeno" Type="Byte" />
         </EntityType>
         <EntityType Name="Racun">
           <Key>
@@ -1544,7 +1569,23 @@
             <End Role="Korisnik" EntitySet="Korisniks" />
             <End Role="Trgovina" EntitySet="Trgovinas" />
           </AssociationSet>
+          <AssociationSet Name="FK_ArtiklPovratnica_Povratnica" Association="PI2213_DBModel.FK_ArtiklPovratnica_Povratnica">
+            <End Role="Povratnica" EntitySet="Povratnicas" />
+            <End Role="ArtiklPovratnica" EntitySet="ArtiklPovratnicas" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_ArtiklPovratnica_Povratnica">
+          <End Type="PI2213_DBModel.Povratnica" Role="Povratnica" Multiplicity="1" />
+          <End Type="PI2213_DBModel.ArtiklPovratnica" Role="ArtiklPovratnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Povratnica">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ArtiklPovratnica">
+              <PropertyRef Name="povratnicaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1592,6 +1633,7 @@
           <EntitySetMapping Name="ArtiklPrimkas">
             <EntityTypeMapping TypeName="PI2213_DBModel.ArtiklPrimka">
               <MappingFragment StoreEntitySet="ArtiklPrimka">
+                <ScalarProperty Name="zaprimljeno" ColumnName="zaprimljeno" />
                 <ScalarProperty Name="artiklId" ColumnName="artiklId" />
                 <ScalarProperty Name="primkaId" ColumnName="primkaId" />
                 <ScalarProperty Name="dobavljacId" ColumnName="dobavljacId" />
@@ -1648,6 +1690,8 @@
           <EntitySetMapping Name="Korisniks">
             <EntityTypeMapping TypeName="PI2213_DBModel.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="kod" ColumnName="kod" />
+                <ScalarProperty Name="registriran" ColumnName="registriran" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ime" ColumnName="ime" />
                 <ScalarProperty Name="prezime" ColumnName="prezime" />
@@ -1693,6 +1737,7 @@
           <EntitySetMapping Name="Primkas">
             <EntityTypeMapping TypeName="PI2213_DBModel.Primka">
               <MappingFragment StoreEntitySet="Primka">
+                <ScalarProperty Name="zaprimljeno" ColumnName="zaprimljeno" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="dobavljacId" ColumnName="dobavljacId" />
                 <ScalarProperty Name="skladisteId" ColumnName="skladisteId" />

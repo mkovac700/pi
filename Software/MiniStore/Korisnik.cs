@@ -33,6 +33,8 @@ namespace MiniStore
         public string korisnickoIme { get; set; }
         public string lozinka { get; set; }
         public Nullable<int> vrstaKorisnika { get; set; }
+        public Nullable<byte> registriran { get; set; }
+        public string kod { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inventura> Inventuras { get; set; }

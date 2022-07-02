@@ -20,5 +20,6 @@ namespace MiniStore
         public Nullable<decimal> cijena { get; set; }
     
         public virtual Artikl Artikl { get; set; }
+        public virtual Povratnica Povratnica { get; set; }
     }
 }
