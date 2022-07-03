@@ -209,6 +209,7 @@
     <Compile Include="Inventura.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Korisnik.code.cs" />
     <Compile Include="Korisnik.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -258,6 +259,7 @@
     <Compile Include="StatistikaProdajeArtikl.cs" />
     <Compile Include="StatistikaProdajeKategorija.cs" />
     <Compile Include="StatistikaProdajeUkupnoPoslovanje.cs" />
+    <Compile Include="Trgovina.Code.cs" />
     <Compile Include="Trgovina.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
