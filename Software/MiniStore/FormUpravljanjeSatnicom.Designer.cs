@@ -41,8 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbKorisnik = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cbPoslovnica = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -157,6 +157,7 @@
             // 
             // cbKorisnik
             // 
+            this.cbKorisnik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKorisnik.FormattingEnabled = true;
             this.cbKorisnik.Location = new System.Drawing.Point(258, 16);
             this.cbKorisnik.Name = "cbKorisnik";
@@ -176,6 +177,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filter";
             // 
+            // cbPoslovnica
+            // 
+            this.cbPoslovnica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPoslovnica.FormattingEnabled = true;
+            this.cbPoslovnica.Location = new System.Drawing.Point(71, 16);
+            this.cbPoslovnica.Name = "cbPoslovnica";
+            this.cbPoslovnica.Size = new System.Drawing.Size(121, 21);
+            this.cbPoslovnica.TabIndex = 13;
+            this.cbPoslovnica.SelectedIndexChanged += new System.EventHandler(this.cbPoslovnica_SelectedIndexChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -184,14 +195,6 @@
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Poslovnica:";
-            // 
-            // cbPoslovnica
-            // 
-            this.cbPoslovnica.FormattingEnabled = true;
-            this.cbPoslovnica.Location = new System.Drawing.Point(71, 16);
-            this.cbPoslovnica.Name = "cbPoslovnica";
-            this.cbPoslovnica.Size = new System.Drawing.Size(121, 21);
-            this.cbPoslovnica.TabIndex = 13;
             // 
             // FormUpravljanjeSatnicom
             // 
