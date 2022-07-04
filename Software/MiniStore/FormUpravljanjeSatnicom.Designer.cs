@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSatnica = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpMjesec = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbMjeseci = new System.Windows.Forms.RadioButton();
+            this.rbSve = new System.Windows.Forms.RadioButton();
             this.btnUredi = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
@@ -43,25 +43,25 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbPoslovnica = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSatnica)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvSatnica
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(458, 238);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvSatnica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSatnica.Location = new System.Drawing.Point(12, 132);
+            this.dgvSatnica.Name = "dgvSatnica";
+            this.dgvSatnica.Size = new System.Drawing.Size(458, 238);
+            this.dgvSatnica.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpMjesec);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbMjeseci);
+            this.groupBox1.Controls.Add(this.rbSve);
             this.groupBox1.Location = new System.Drawing.Point(12, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(458, 54);
@@ -85,28 +85,31 @@
             this.dtpMjesec.Name = "dtpMjesec";
             this.dtpMjesec.Size = new System.Drawing.Size(139, 20);
             this.dtpMjesec.TabIndex = 2;
+            this.dtpMjesec.ValueChanged += new System.EventHandler(this.dtpMjesec_ValueChanged);
             // 
-            // radioButton2
+            // rbMjeseci
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(71, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(90, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Po mjesecima";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbMjeseci.AutoSize = true;
+            this.rbMjeseci.Location = new System.Drawing.Point(71, 19);
+            this.rbMjeseci.Name = "rbMjeseci";
+            this.rbMjeseci.Size = new System.Drawing.Size(90, 17);
+            this.rbMjeseci.TabIndex = 1;
+            this.rbMjeseci.TabStop = true;
+            this.rbMjeseci.Text = "Po mjesecima";
+            this.rbMjeseci.UseVisualStyleBackColor = true;
+            this.rbMjeseci.CheckedChanged += new System.EventHandler(this.rbMjeseci_CheckedChanged);
             // 
-            // radioButton1
+            // rbSve
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(44, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Sve";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbSve.AutoSize = true;
+            this.rbSve.Location = new System.Drawing.Point(6, 19);
+            this.rbSve.Name = "rbSve";
+            this.rbSve.Size = new System.Drawing.Size(44, 17);
+            this.rbSve.TabIndex = 0;
+            this.rbSve.TabStop = true;
+            this.rbSve.Text = "Sve";
+            this.rbSve.UseVisualStyleBackColor = true;
+            this.rbSve.CheckedChanged += new System.EventHandler(this.rbSve_CheckedChanged);
             // 
             // btnUredi
             // 
@@ -136,6 +139,7 @@
             this.btnObrisi.TabIndex = 8;
             this.btnObrisi.Text = "Obriši odabrani zapis";
             this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnIspis
             // 
@@ -163,6 +167,7 @@
             this.cbKorisnik.Name = "cbKorisnik";
             this.cbKorisnik.Size = new System.Drawing.Size(180, 21);
             this.cbKorisnik.TabIndex = 11;
+            this.cbKorisnik.SelectedIndexChanged += new System.EventHandler(this.cbKorisnik_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -207,11 +212,11 @@
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnUredi);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSatnica);
             this.Name = "FormUpravljanjeSatnicom";
             this.Text = "Upravljanje satnicom";
             this.Load += new System.EventHandler(this.FormUpravljanjeSatnicom_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSatnica)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -222,11 +227,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSatnica;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtpMjesec;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbMjeseci;
+        private System.Windows.Forms.RadioButton rbSve;
         private System.Windows.Forms.Button btnUredi;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;

@@ -28,14 +28,29 @@ namespace MiniStore
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            FormSatnica formSatnica = new FormSatnica();
-            formSatnica.ShowDialog();
+            FormSatnica formSatnica = new FormSatnica(VrstaOperacije.Dodavanje, cbKorisnik.SelectedItem as Korisnik);
+            var result = formSatnica.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                OsvjeziDGV();
+            }
         }
 
         private void btnUredi_Click(object sender, EventArgs e)
         {
-            FormSatnica formSatnica = new FormSatnica();
-            formSatnica.ShowDialog();
+            FormSatnica formSatnica = new FormSatnica(VrstaOperacije.Azuriranje, cbKorisnik.SelectedItem as Korisnik, dgvSatnica.CurrentRow.DataBoundItem as Satnica);
+            var result = formSatnica.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                OsvjeziDGV();
+            }
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            entities.Satnicas.Remove(entities.Satnicas.Find((dgvSatnica.CurrentRow.DataBoundItem as Satnica).id));
+            entities.SaveChanges();
+            OsvjeziDGV();
         }
 
         private void FormUpravljanjeSatnicom_Load(object sender, EventArgs e)
@@ -45,6 +60,36 @@ namespace MiniStore
 
             PostaviGumbove();
             PostaviFilter();
+
+            rbSve.Checked = true;
+
+            OsvjeziDGV();
+        }
+
+        private void OsvjeziDGV()
+        {
+            entities.Satnicas.Load();
+
+            //dodano zbog azuriranja (zbog cinjenice da se promjena vrsi u kontekstu druge forme, potrebno je prisilno reloadati zapise u kontekstu ove forme
+            foreach(var item in entities.Satnicas.Local)
+            {
+                entities.Entry(item).Reload();
+            }
+
+            if (rbSve.Checked)
+            {
+                dgvSatnica.DataSource = null;
+                dgvSatnica.DataSource = (from satnica in entities.Satnicas.Local
+                                        where satnica.Korisnik.id == (cbKorisnik.SelectedItem as Korisnik).id
+                                        select satnica).ToList();
+            }
+            if (rbMjeseci.Checked)
+            {
+                dgvSatnica.DataSource = null;
+                dgvSatnica.DataSource = (from satnica in entities.Satnicas.Local
+                                        where satnica.Korisnik.id == (cbKorisnik.SelectedItem as Korisnik).id && satnica.datum.Value.Month == dtpMjesec.Value.Month && satnica.datum.Value.Year == dtpMjesec.Value.Year
+                                        select satnica).ToList();
+            }
         }
 
         private void PostaviGumbove()
@@ -106,6 +151,26 @@ namespace MiniStore
         {
             cbKorisnik.DataSource = null;
             cbKorisnik.DataSource = (cbPoslovnica.SelectedItem as Trgovina).Korisniks.ToList();
+        }
+
+        private void cbKorisnik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OsvjeziDGV();
+        }
+
+        private void rbSve_CheckedChanged(object sender, EventArgs e)
+        {
+            OsvjeziDGV();
+        }
+
+        private void rbMjeseci_CheckedChanged(object sender, EventArgs e)
+        {
+            OsvjeziDGV();
+        }
+
+        private void dtpMjesec_ValueChanged(object sender, EventArgs e)
+        {
+            OsvjeziDGV();
         }
     }
 }
