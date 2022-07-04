@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbPrimke = new System.Windows.Forms.ComboBox();
             this.dgvStavkePrimke = new System.Windows.Forms.DataGridView();
@@ -37,6 +38,8 @@
             this.dgvZaprimljeneStavke = new System.Windows.Forms.DataGridView();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnZatvori = new System.Windows.Forms.Button();
+            this.chkboxPrimkaZaprimljena = new System.Windows.Forms.CheckBox();
+            this.tooltipCheckbox = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaprimljeneStavke)).BeginInit();
             this.SuspendLayout();
@@ -52,12 +55,13 @@
             // 
             // cbPrimke
             // 
+            this.cbPrimke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPrimke.FormattingEnabled = true;
             this.cbPrimke.Location = new System.Drawing.Point(99, 12);
             this.cbPrimke.Name = "cbPrimke";
-            this.cbPrimke.Size = new System.Drawing.Size(345, 21);
+            this.cbPrimke.Size = new System.Drawing.Size(113, 21);
             this.cbPrimke.TabIndex = 1;
-            this.cbPrimke.SelectedIndexChanged += new System.EventHandler(this.cbPrimke_SelectedIndexChanged);
+            this.cbPrimke.SelectedValueChanged += new System.EventHandler(this.cbPrimke_SelectedValueChanged);
             // 
             // dgvStavkePrimke
             // 
@@ -125,11 +129,32 @@
             this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
+            // chkboxPrimkaZaprimljena
+            // 
+            this.chkboxPrimkaZaprimljena.AutoSize = true;
+            this.chkboxPrimkaZaprimljena.Location = new System.Drawing.Point(644, 397);
+            this.chkboxPrimkaZaprimljena.Name = "chkboxPrimkaZaprimljena";
+            this.chkboxPrimkaZaprimljena.Size = new System.Drawing.Size(156, 17);
+            this.chkboxPrimkaZaprimljena.TabIndex = 10;
+            this.chkboxPrimkaZaprimljena.Text = "Označi primku zaprimljenom";
+            this.tooltipCheckbox.SetToolTip(this.chkboxPrimkaZaprimljena, "Označiti ako su sve željene stavke zaprimljene. Primka će biti označena kao zapri" +
+        "mljena i neće se više prikazivati u popisu.");
+            this.chkboxPrimkaZaprimljena.UseVisualStyleBackColor = true;
+            this.chkboxPrimkaZaprimljena.CheckedChanged += new System.EventHandler(this.chkboxPrimkaZaprimljena_CheckedChanged);
+            // 
+            // tooltipCheckbox
+            // 
+            this.tooltipCheckbox.AutoPopDelay = 10000;
+            this.tooltipCheckbox.InitialDelay = 500;
+            this.tooltipCheckbox.IsBalloon = true;
+            this.tooltipCheckbox.ReshowDelay = 100;
+            // 
             // FormZaprimanjeArtikala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 435);
+            this.Controls.Add(this.chkboxPrimkaZaprimljena);
             this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.dgvZaprimljeneStavke);
@@ -160,5 +185,7 @@
         private System.Windows.Forms.DataGridView dgvZaprimljeneStavke;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnZatvori;
+        private System.Windows.Forms.CheckBox chkboxPrimkaZaprimljena;
+        private System.Windows.Forms.ToolTip tooltipCheckbox;
     }
 }
