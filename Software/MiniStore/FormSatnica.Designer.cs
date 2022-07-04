@@ -31,11 +31,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnSpremi = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
+            this.lblKorisnik = new System.Windows.Forms.Label();
+            this.numSati = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numSati)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -65,62 +66,84 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Broj sati:";
             // 
-            // textBox2
+            // btnSpremi
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(93, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 5;
+            this.btnSpremi.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSpremi.Location = new System.Drawing.Point(78, 143);
+            this.btnSpremi.Name = "btnSpremi";
+            this.btnSpremi.Size = new System.Drawing.Size(75, 23);
+            this.btnSpremi.TabIndex = 8;
+            this.btnSpremi.Text = "Spremi";
+            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
-            // textBox4
+            // btnOdustani
             // 
-            this.textBox4.Location = new System.Drawing.Point(93, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(72, 20);
-            this.textBox4.TabIndex = 7;
+            this.btnOdustani.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnOdustani.Location = new System.Drawing.Point(159, 143);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(75, 23);
+            this.btnOdustani.TabIndex = 9;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dtpDatum
             // 
-            this.button1.Location = new System.Drawing.Point(78, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Spremi";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dtpDatum.Location = new System.Drawing.Point(93, 56);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(141, 20);
+            this.dtpDatum.TabIndex = 10;
             // 
-            // button2
+            // lblKorisnik
             // 
-            this.button2.Location = new System.Drawing.Point(159, 143);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Odustani";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lblKorisnik.AutoSize = true;
+            this.lblKorisnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKorisnik.Location = new System.Drawing.Point(90, 26);
+            this.lblKorisnik.Name = "lblKorisnik";
+            this.lblKorisnik.Size = new System.Drawing.Size(134, 13);
+            this.lblKorisnik.TabIndex = 11;
+            this.lblKorisnik.Text = "Dohvaćam korisnika...";
             // 
-            // dateTimePicker1
+            // numSati
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 56);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(141, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.numSati.Location = new System.Drawing.Point(93, 94);
+            this.numSati.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numSati.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSati.Name = "numSati";
+            this.numSati.Size = new System.Drawing.Size(42, 20);
+            this.numSati.TabIndex = 12;
+            this.numSati.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // FormSatnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(248, 185);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.numSati);
+            this.Controls.Add(this.lblKorisnik);
+            this.Controls.Add(this.dtpDatum);
+            this.Controls.Add(this.btnOdustani);
+            this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "FormSatnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satnica";
+            this.Load += new System.EventHandler(this.FormSatnica_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numSati)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,10 +153,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnSpremi;
+        private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.DateTimePicker dtpDatum;
+        private System.Windows.Forms.Label lblKorisnik;
+        private System.Windows.Forms.NumericUpDown numSati;
     }
 }
