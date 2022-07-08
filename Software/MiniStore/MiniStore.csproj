@@ -199,6 +199,12 @@
     <Compile Include="FormUpravljanjeSatnicom.Designer.cs">
       <DependentUpon>FormUpravljanjeSatnicom.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUpravljanjeSatnicomIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeSatnicomIzvjestaj.Designer.cs">
+      <DependentUpon>FormUpravljanjeSatnicomIzvjestaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormZaprimanjeArtikala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     <EmbeddedResource Include="FormUpravljanjeSatnicom.resx">
       <DependentUpon>FormUpravljanjeSatnicom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeSatnicomIzvjestaj.resx">
+      <DependentUpon>FormUpravljanjeSatnicomIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormZaprimanjeArtikala.resx">
       <DependentUpon>FormZaprimanjeArtikala.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,6 +363,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="RacunIzvjestaj.rdlc" />
+    <EmbeddedResource Include="SatnicaReport.rdlc" />
     <EmbeddedResource Include="StastikaProdajeKategorijaReport.rdlc" />
     <EmbeddedResource Include="StatistikaProdajeArtikalaReport.rdlc" />
     <EmbeddedResource Include="StatistikaProdajeUkupnoReport.rdlc" />
@@ -374,6 +384,7 @@
     <None Include="Properties\DataSources\NarudzbenicaIzvjestajStavka.datasource" />
     <None Include="Properties\DataSources\RacunIzvjestaj.datasource" />
     <None Include="Properties\DataSources\RacunIzvjestajStavka.datasource" />
+    <None Include="Properties\DataSources\Satnica.datasource" />
     <None Include="Properties\DataSources\StatistikaProdajeArtikl.datasource" />
     <None Include="Properties\DataSources\StatistikaProdajeArtiklStavkaTrgovina.datasource" />
     <None Include="Properties\DataSources\StatistikaProdajeArtiklStavkaVrijeme.datasource" />

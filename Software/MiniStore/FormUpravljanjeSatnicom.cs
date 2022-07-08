@@ -14,6 +14,7 @@ namespace MiniStore
     public partial class FormUpravljanjeSatnicom : Form
     {
         Database entities = new Database();
+        private Korisnik odabraniKorisnik;
         public FormUpravljanjeSatnicom()
         {
             InitializeComponent();
@@ -82,6 +83,13 @@ namespace MiniStore
                 dgvSatnica.DataSource = (from satnica in entities.Satnicas.Local
                                         where satnica.Korisnik.id == (cbKorisnik.SelectedItem as Korisnik).id
                                         select satnica).ToList();
+
+                dgvSatnica.Columns[0].Visible = false;
+                dgvSatnica.Columns[1].Visible = false;
+                dgvSatnica.Columns[2].HeaderText = "Datum";
+                dgvSatnica.Columns[3].HeaderText = "Broj sati";
+                dgvSatnica.Columns[3].DisplayIndex = 1;
+                dgvSatnica.Columns[4].DisplayIndex = 0;
             }
             if (rbMjeseci.Checked)
             {
@@ -89,6 +97,13 @@ namespace MiniStore
                 dgvSatnica.DataSource = (from satnica in entities.Satnicas.Local
                                         where satnica.Korisnik.id == (cbKorisnik.SelectedItem as Korisnik).id && satnica.datum.Value.Month == dtpMjesec.Value.Month && satnica.datum.Value.Year == dtpMjesec.Value.Year
                                         select satnica).ToList();
+
+                dgvSatnica.Columns[0].Visible = false;
+                dgvSatnica.Columns[1].Visible = false;
+                dgvSatnica.Columns[2].HeaderText = "Datum";
+                dgvSatnica.Columns[3].HeaderText = "Broj sati";
+                dgvSatnica.Columns[3].DisplayIndex = 1;
+                dgvSatnica.Columns[4].DisplayIndex = 0;
             }
         }
 
@@ -156,6 +171,7 @@ namespace MiniStore
         private void cbKorisnik_SelectedIndexChanged(object sender, EventArgs e)
         {
             OsvjeziDGV();
+            odabraniKorisnik = cbKorisnik.SelectedItem as Korisnik;
         }
 
         private void rbSve_CheckedChanged(object sender, EventArgs e)
@@ -171,6 +187,35 @@ namespace MiniStore
         private void dtpMjesec_ValueChanged(object sender, EventArgs e)
         {
             OsvjeziDGV();
+        }
+
+        private void btnIspis_Click(object sender, EventArgs e)
+        {
+            entities.Satnicas.Load();
+
+            foreach (var item in entities.Satnicas.Local)
+            {
+                entities.Entry(item).Reload();
+            }
+
+            if (rbSve.Checked)
+            {
+                var satnice = (from satnica in entities.Satnicas.Local
+                               where satnica.Korisnik.id == odabraniKorisnik.id
+                               select satnica);
+
+                FormUpravljanjeSatnicomIzvjestaj formUpravljanjeSatnicomIzvjestaj = new FormUpravljanjeSatnicomIzvjestaj(satnice, cbKorisnik.SelectedItem as Korisnik);
+                formUpravljanjeSatnicomIzvjestaj.Show();
+            }
+            if (rbMjeseci.Checked)
+            {
+                var satnice = (from satnica in entities.Satnicas.Local
+                               where satnica.Korisnik.id == odabraniKorisnik.id && satnica.datum.Value.Month == dtpMjesec.Value.Month && satnica.datum.Value.Year == dtpMjesec.Value.Year
+                               select satnica);
+
+                FormUpravljanjeSatnicomIzvjestaj formUpravljanjeSatnicomIzvjestaj = new FormUpravljanjeSatnicomIzvjestaj(satnice, cbKorisnik.SelectedItem as Korisnik, dtpMjesec.Value);
+                formUpravljanjeSatnicomIzvjestaj.Show();
+            }
         }
     }
 }

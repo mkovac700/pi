@@ -149,6 +149,7 @@
             this.btnIspis.TabIndex = 9;
             this.btnIspis.Text = "Ispis izvješća";
             this.btnIspis.UseVisualStyleBackColor = true;
+            this.btnIspis.Click += new System.EventHandler(this.btnIspis_Click);
             // 
             // label2
             // 
@@ -214,6 +215,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvSatnica);
             this.Name = "FormUpravljanjeSatnicom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Upravljanje satnicom";
             this.Load += new System.EventHandler(this.FormUpravljanjeSatnicom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSatnica)).EndInit();
