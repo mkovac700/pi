@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artikl.code.cs" />
     <Compile Include="Artikl.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -92,6 +93,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Autentifikator.cs" />
+    <Compile Include="Dobavljac.code.cs" />
     <Compile Include="Dobavljac.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -100,6 +102,12 @@
     </Compile>
     <Compile Include="FormArtikl.Designer.cs">
       <DependentUpon>FormArtikl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormArtiklSkladiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArtiklSkladiste.Designer.cs">
+      <DependentUpon>FormArtiklSkladiste.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInventura.cs">
       <SubType>Form</SubType>
@@ -136,6 +144,12 @@
     </Compile>
     <Compile Include="FormNarucivanjeArtikalaIzvjestaj.Designer.cs">
       <DependentUpon>FormNarucivanjeArtikalaIzvjestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPovratnicaIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPovratnicaIzvjestaj.Designer.cs">
+      <DependentUpon>FormPovratnicaIzvjestaj.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSatnica.cs">
       <SubType>Form</SubType>
@@ -253,6 +267,7 @@
     <Compile Include="Satnica.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Skladiste.code.cs" />
     <Compile Include="Skladiste.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -269,6 +284,9 @@
     <Compile Include="VrstaOperacije.cs" />
     <EmbeddedResource Include="FormArtikl.resx">
       <DependentUpon>FormArtikl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArtiklSkladiste.resx">
+      <DependentUpon>FormArtiklSkladiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInventura.resx">
       <DependentUpon>FormInventura.cs</DependentUpon>
@@ -287,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNarucivanjeArtikalaIzvjestaj.resx">
       <DependentUpon>FormNarucivanjeArtikalaIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPovratnicaIzvjestaj.resx">
+      <DependentUpon>FormPovratnicaIzvjestaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSatnica.resx">
       <DependentUpon>FormSatnica.cs</DependentUpon>
@@ -322,6 +343,7 @@
       <DependentUpon>FormPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NarudzbenicaReport.rdlc" />
+    <EmbeddedResource Include="PovratnicaReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -347,6 +369,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Artikl.datasource" />
+    <None Include="Properties\DataSources\ArtiklPovratnica.datasource" />
     <None Include="Properties\DataSources\NarudzbenicaIzvjestaj.datasource" />
     <None Include="Properties\DataSources\NarudzbenicaIzvjestajStavka.datasource" />
     <None Include="Properties\DataSources\RacunIzvjestaj.datasource" />
@@ -388,6 +411,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeneratorLib\GeneratorLib.csproj">
+      <Project>{f23dc788-12d7-472f-9074-c950ece42185}</Project>
+      <Name>GeneratorLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ValidacijaUnosa\ValidacijaUnosa.csproj">
       <Project>{098281fd-e9da-479a-95c8-3014e20e27f6}</Project>
       <Name>ValidacijaUnosa</Name>

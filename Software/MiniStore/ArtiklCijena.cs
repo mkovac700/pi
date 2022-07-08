@@ -14,7 +14,7 @@ namespace MiniStore
     
     public partial class ArtiklCijena
     {
-        public int artiklId { get; set; }
+        public long artiklId { get; set; }
         public decimal cijena { get; set; }
         public System.DateTime vrijediOd { get; set; }
     
