@@ -22,7 +22,7 @@ namespace MiniStore
 
     public class RacunIzvjestajStavka
     {
-        public int Sifra { get; set; }
+        public long Sifra { get; set; }
         public string Naziv { get; set; }
         public int? Kolicina { get; set; }
         public decimal? Cijena { get; set; }

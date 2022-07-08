@@ -8,6 +8,11 @@ namespace MiniStore
 {
     public partial class Artikl
     {
+        public decimal RelevantnaCijena
+        {
+            get { return ArtiklCijenas.OrderByDescending(x => x.vrijediOd).FirstOrDefault().cijena; }
+        }
+
         public override string ToString()
         {
             return naziv;

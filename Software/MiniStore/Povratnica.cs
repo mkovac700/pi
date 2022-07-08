@@ -26,11 +26,11 @@ namespace MiniStore
         public Nullable<int> korisnikId { get; set; }
         public Nullable<int> trgovinaId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ArtiklPovratnica> ArtiklPovratnicas { get; set; }
         public virtual Dobavljac Dobavljac { get; set; }
         public virtual Korisnik Korisnik { get; set; }
         public virtual Trgovina Trgovina { get; set; }
         public virtual Trgovina Trgovina1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ArtiklPovratnica> ArtiklPovratnicas { get; set; }
     }
 }
