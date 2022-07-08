@@ -15,7 +15,7 @@ namespace MiniStore
     public partial class RacunArtikl
     {
         public int racunId { get; set; }
-        public int artiklId { get; set; }
+        public long artiklId { get; set; }
         public Nullable<int> kolicina { get; set; }
         public Nullable<decimal> cijena { get; set; }
     

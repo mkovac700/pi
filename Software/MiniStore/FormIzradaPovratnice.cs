@@ -93,7 +93,7 @@ namespace MiniStore
             }
             else
             {
-                int artiklId = odabraniArtikl.artiklId;
+                long artiklId = odabraniArtikl.artiklId;
                 int kolicina = (int)numKolicina.Value;
                 decimal cijena = odabraniArtikl.Artikl.ArtiklCijenas.OrderByDescending(x => x.vrijediOd).FirstOrDefault().cijena;
 

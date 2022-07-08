@@ -35,7 +35,7 @@ namespace MiniStore
             {
                 var odabranaStavka = dgvStavkePrimke.CurrentRow.DataBoundItem as ArtiklPrimka;
 
-                int artiklId = odabranaStavka.artiklId;
+                long artiklId = odabranaStavka.artiklId;
                 int skladisteId = (int)odabranaStavka.skladisteId;
                 int kolicina = (int)odabranaStavka.kolicina;
 
