@@ -14,6 +14,9 @@ namespace MiniStore
     {
         Trgovina trenutnaTrgovina;
         int trenutnaTrgovinaId;
+
+        string fileLocation;
+
         public GlavnaForma()
         {
             InitializeComponent();
@@ -73,7 +76,8 @@ namespace MiniStore
 
         private void btnPostavke_Click(object sender, EventArgs e)
         {
-
+            FormPostavke formPostavke = new FormPostavke(); 
+            formPostavke.Show();
         }
 
         private void GlavnaForma_Load(object sender, EventArgs e)
@@ -93,8 +97,31 @@ namespace MiniStore
                 lblKorisnik.Text = $"Korisnik: {Autentifikator.DohvatiPrijavljenogKorisnika().ime} {Autentifikator.DohvatiPrijavljenogKorisnika().prezime}";
 
                 PostaviGumbove();
+
+                UcitajLogo();
             } 
            
+        }
+
+        private void UcitajLogo()
+        {
+            fileLocation = Properties.Settings.Default.FileString;
+            if (fileLocation != "")
+            {
+                try
+                {
+                    Image image = Image.FromFile(Properties.Settings.Default.FileString);
+                    this.BackgroundImage = image;
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    var result = MessageBox.Show("Neuspješno učitavanje slike! Želite li obrisati sliku?", "Greška", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Properties.Settings.Default.Reset();
+                    }
+                }
+            }
         }
 
         private void btnOdjava_Click(object sender, EventArgs e)
@@ -125,13 +152,13 @@ namespace MiniStore
                 btnZaprimanjeArtikala.Enabled = true;
                 btnIzradaPovratnice.Enabled = true;
                 btnUpravljanjeSatnicom.Enabled = true;
+                btnPostavke.Enabled = true;
             }
             if(razina <= 2) //voditelj
             {
-                btnUpravljanjeArtiklima.Enabled = true; //funkcionalnost podijeliti na dvije opcije: voditelj moze obavljati CRUD nad ArtiklSkladiste, dok superuser nad Artikl + ArtiklCijena
+                btnUpravljanjeArtiklima.Enabled = true; 
                 btnInventura.Enabled = true;
                 btnStatistikaProdaje.Enabled = true;
-                btnPostavke.Enabled = true; //isto napraviti dvostruki pristup
             }
             if (razina == 1) //admin
             {
