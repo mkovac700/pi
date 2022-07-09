@@ -80,6 +80,7 @@
     <Compile Include="ArtiklCijena.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="ArtiklInventura.cs" />
     <Compile Include="ArtiklNarudzbenica.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -120,6 +121,12 @@
     </Compile>
     <Compile Include="FormInventura.Designer.cs">
       <DependentUpon>FormInventura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInventuraIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventuraIzvjestaj.Designer.cs">
+      <DependentUpon>FormInventuraIzvjestaj.cs</DependentUpon>
     </Compile>
     <Compile Include="FormIzradaPovratnice.cs">
       <SubType>Form</SubType>
@@ -162,6 +169,12 @@
     </Compile>
     <Compile Include="FormPostavkeSucelja.Designer.cs">
       <DependentUpon>FormPostavkeSucelja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPovijestInventura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPovijestInventura.Designer.cs">
+      <DependentUpon>FormPovijestInventura.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPovratnicaIzvjestaj.cs">
       <SubType>Form</SubType>
@@ -332,6 +345,9 @@
     <EmbeddedResource Include="FormInventura.resx">
       <DependentUpon>FormInventura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormInventuraIzvjestaj.resx">
+      <DependentUpon>FormInventuraIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormIzradaPovratnice.resx">
       <DependentUpon>FormIzradaPovratnice.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPostavkeSucelja.resx">
       <DependentUpon>FormPostavkeSucelja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPovijestInventura.resx">
+      <DependentUpon>FormPovijestInventura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPovratnicaIzvjestaj.resx">
       <DependentUpon>FormPovratnicaIzvjestaj.cs</DependentUpon>
@@ -398,6 +417,7 @@
     <EmbeddedResource Include="FormPrijava.resx">
       <DependentUpon>FormPrijava.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InventuraReport.rdlc" />
     <EmbeddedResource Include="NarudzbenicaReport.rdlc" />
     <EmbeddedResource Include="PovratnicaReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -427,6 +447,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Artikl.datasource" />
     <None Include="Properties\DataSources\ArtiklPovratnica.datasource" />
+    <None Include="Properties\DataSources\Inventura.datasource" />
     <None Include="Properties\DataSources\NarudzbenicaIzvjestaj.datasource" />
     <None Include="Properties\DataSources\NarudzbenicaIzvjestajStavka.datasource" />
     <None Include="Properties\DataSources\RacunIzvjestaj.datasource" />
@@ -472,6 +493,10 @@
     <ProjectReference Include="..\GeneratorLib\GeneratorLib.csproj">
       <Project>{f23dc788-12d7-472f-9074-c950ece42185}</Project>
       <Name>GeneratorLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValidacijaLib\ValidacijaLib.csproj">
+      <Project>{f886f3de-987a-4699-beb7-707f174968c2}</Project>
+      <Name>ValidacijaLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\ValidacijaUnosa\ValidacijaUnosa.csproj">
       <Project>{098281fd-e9da-479a-95c8-3014e20e27f6}</Project>

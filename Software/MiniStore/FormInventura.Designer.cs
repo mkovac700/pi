@@ -29,37 +29,40 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dtpDatumInventure = new System.Windows.Forms.DateTimePicker();
+            this.dgvPopisArtikala = new System.Windows.Forms.DataGridView();
+            this.btnUcitaj = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tbKnjigCijena = new System.Windows.Forms.TextBox();
+            this.tbKnjigKolicina = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbStvCijena = new System.Windows.Forms.TextBox();
+            this.btnDohvati = new System.Windows.Forms.Button();
+            this.tbStvKolicina = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btnUkloni = new System.Windows.Forms.Button();
+            this.btnDodaj = new System.Windows.Forms.Button();
+            this.tbKolicina = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tbJedinicnaCijena = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbSifra = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnIzracunaj = new System.Windows.Forms.Button();
+            this.btnPohrani = new System.Windows.Forms.Button();
+            this.btnIspis = new System.Windows.Forms.Button();
+            this.tbStanje = new System.Windows.Forms.TextBox();
+            this.tbRazlika = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnPovijest = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,35 +78,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Datum inventure:";
             // 
-            // dateTimePicker1
+            // dtpDatumInventure
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(106, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpDatumInventure.Location = new System.Drawing.Point(106, 12);
+            this.dtpDatumInventure.Name = "dtpDatumInventure";
+            this.dtpDatumInventure.Size = new System.Drawing.Size(200, 20);
+            this.dtpDatumInventure.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvPopisArtikala
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(531, 190);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvPopisArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPopisArtikala.Location = new System.Drawing.Point(15, 51);
+            this.dgvPopisArtikala.Name = "dgvPopisArtikala";
+            this.dgvPopisArtikala.Size = new System.Drawing.Size(531, 190);
+            this.dgvPopisArtikala.TabIndex = 2;
             // 
-            // button1
+            // btnUcitaj
             // 
-            this.button1.Location = new System.Drawing.Point(252, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Učitaj knjigovodstveno stanje";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUcitaj.Location = new System.Drawing.Point(252, 22);
+            this.btnUcitaj.Name = "btnUcitaj";
+            this.btnUcitaj.Size = new System.Drawing.Size(103, 50);
+            this.btnUcitaj.TabIndex = 3;
+            this.btnUcitaj.Text = "Učitaj knjigovodstveno stanje";
+            this.btnUcitaj.UseVisualStyleBackColor = true;
+            this.btnUcitaj.Click += new System.EventHandler(this.btnUcitaj_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbKnjigCijena);
+            this.groupBox1.Controls.Add(this.btnUcitaj);
+            this.groupBox1.Controls.Add(this.tbKnjigKolicina);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(15, 262);
@@ -113,14 +117,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Knjigovodstveno stanje";
             // 
-            // label2
+            // tbKnjigCijena
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Količina:";
+            this.tbKnjigCijena.Location = new System.Drawing.Point(59, 52);
+            this.tbKnjigCijena.Name = "tbKnjigCijena";
+            this.tbKnjigCijena.ReadOnly = true;
+            this.tbKnjigCijena.Size = new System.Drawing.Size(153, 20);
+            this.tbKnjigCijena.TabIndex = 3;
+            // 
+            // tbKnjigKolicina
+            // 
+            this.tbKnjigKolicina.Location = new System.Drawing.Point(59, 24);
+            this.tbKnjigKolicina.Name = "tbKnjigKolicina";
+            this.tbKnjigKolicina.ReadOnly = true;
+            this.tbKnjigKolicina.Size = new System.Drawing.Size(153, 20);
+            this.tbKnjigKolicina.TabIndex = 2;
             // 
             // label3
             // 
@@ -131,25 +142,20 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Cijena:";
             // 
-            // textBox1
+            // label2
             // 
-            this.textBox1.Location = new System.Drawing.Point(59, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(59, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 20);
-            this.textBox2.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Količina:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.tbStvCijena);
+            this.groupBox2.Controls.Add(this.btnDohvati);
+            this.groupBox2.Controls.Add(this.tbStvKolicina);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(15, 362);
@@ -159,28 +165,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stvarno stanje";
             // 
-            // textBox3
+            // tbStvCijena
             // 
-            this.textBox3.Location = new System.Drawing.Point(59, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 20);
-            this.textBox3.TabIndex = 3;
+            this.tbStvCijena.Location = new System.Drawing.Point(59, 52);
+            this.tbStvCijena.Name = "tbStvCijena";
+            this.tbStvCijena.ReadOnly = true;
+            this.tbStvCijena.Size = new System.Drawing.Size(153, 20);
+            this.tbStvCijena.TabIndex = 3;
             // 
-            // button2
+            // btnDohvati
             // 
-            this.button2.Location = new System.Drawing.Point(252, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 50);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Dohvati stvarno stanje";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDohvati.Location = new System.Drawing.Point(252, 22);
+            this.btnDohvati.Name = "btnDohvati";
+            this.btnDohvati.Size = new System.Drawing.Size(103, 50);
+            this.btnDohvati.TabIndex = 3;
+            this.btnDohvati.Text = "Dohvati stvarno stanje";
+            this.btnDohvati.UseVisualStyleBackColor = true;
+            this.btnDohvati.Click += new System.EventHandler(this.btnDohvati_Click);
             // 
-            // textBox4
+            // tbStvKolicina
             // 
-            this.textBox4.Location = new System.Drawing.Point(59, 24);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(153, 20);
-            this.textBox4.TabIndex = 2;
+            this.tbStvKolicina.Location = new System.Drawing.Point(59, 24);
+            this.tbStvKolicina.Name = "tbStvKolicina";
+            this.tbStvKolicina.ReadOnly = true;
+            this.tbStvKolicina.Size = new System.Drawing.Size(153, 20);
+            this.tbStvKolicina.TabIndex = 2;
             // 
             // label4
             // 
@@ -202,13 +211,14 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.lblStatus);
+            this.groupBox3.Controls.Add(this.btnUkloni);
+            this.groupBox3.Controls.Add(this.btnDodaj);
+            this.groupBox3.Controls.Add(this.tbKolicina);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.tbJedinicnaCijena);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.tbSifra);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(561, 51);
             this.groupBox3.Name = "groupBox3";
@@ -216,6 +226,67 @@
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Unos artikala";
+            // 
+            // btnUkloni
+            // 
+            this.btnUkloni.Location = new System.Drawing.Point(109, 152);
+            this.btnUkloni.Name = "btnUkloni";
+            this.btnUkloni.Size = new System.Drawing.Size(75, 23);
+            this.btnUkloni.TabIndex = 7;
+            this.btnUkloni.Text = "Ukloni artikl";
+            this.btnUkloni.UseVisualStyleBackColor = true;
+            this.btnUkloni.Click += new System.EventHandler(this.btnUkloni_Click);
+            // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Location = new System.Drawing.Point(17, 152);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnDodaj.TabIndex = 6;
+            this.btnDodaj.Text = "Dodaj artikl";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
+            // tbKolicina
+            // 
+            this.tbKolicina.Location = new System.Drawing.Point(98, 116);
+            this.tbKolicina.Name = "tbKolicina";
+            this.tbKolicina.Size = new System.Drawing.Size(96, 20);
+            this.tbKolicina.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 119);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Količina:";
+            // 
+            // tbJedinicnaCijena
+            // 
+            this.tbJedinicnaCijena.Location = new System.Drawing.Point(98, 70);
+            this.tbJedinicnaCijena.Name = "tbJedinicnaCijena";
+            this.tbJedinicnaCijena.ReadOnly = true;
+            this.tbJedinicnaCijena.Size = new System.Drawing.Size(96, 20);
+            this.tbJedinicnaCijena.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Jedinična cijena:";
+            // 
+            // tbSifra
+            // 
+            this.tbSifra.Location = new System.Drawing.Point(74, 24);
+            this.tbSifra.Name = "tbSifra";
+            this.tbSifra.Size = new System.Drawing.Size(120, 20);
+            this.tbSifra.TabIndex = 1;
+            this.tbSifra.TextChanged += new System.EventHandler(this.tbSifra_TextChanged);
             // 
             // label6
             // 
@@ -226,69 +297,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Šifra artikla:";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(74, 24);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Jedinična cijena:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(98, 59);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(96, 20);
-            this.textBox6.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 95);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Količina:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(98, 92);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(96, 20);
-            this.textBox7.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(17, 152);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Dodaj artikl";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(109, 152);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Ukloni artikl";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.textBox9);
-            this.groupBox4.Controls.Add(this.textBox8);
+            this.groupBox4.Controls.Add(this.btnIzracunaj);
+            this.groupBox4.Controls.Add(this.btnPohrani);
+            this.groupBox4.Controls.Add(this.btnIspis);
+            this.groupBox4.Controls.Add(this.tbStanje);
+            this.groupBox4.Controls.Add(this.tbRazlika);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Location = new System.Drawing.Point(394, 262);
@@ -298,14 +313,51 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Inventurno stanje";
             // 
-            // label9
+            // btnIzracunaj
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Inventurna razlika:";
+            this.btnIzracunaj.Location = new System.Drawing.Point(114, 136);
+            this.btnIzracunaj.Name = "btnIzracunaj";
+            this.btnIzracunaj.Size = new System.Drawing.Size(75, 36);
+            this.btnIzracunaj.TabIndex = 6;
+            this.btnIzracunaj.Text = "Izračunaj razliku";
+            this.btnIzracunaj.UseVisualStyleBackColor = true;
+            this.btnIzracunaj.Click += new System.EventHandler(this.btnIzracunaj_Click);
+            // 
+            // btnPohrani
+            // 
+            this.btnPohrani.Location = new System.Drawing.Point(195, 136);
+            this.btnPohrani.Name = "btnPohrani";
+            this.btnPohrani.Size = new System.Drawing.Size(75, 36);
+            this.btnPohrani.TabIndex = 5;
+            this.btnPohrani.Text = "Pohrani";
+            this.btnPohrani.UseVisualStyleBackColor = true;
+            this.btnPohrani.Click += new System.EventHandler(this.btnPohrani_Click);
+            // 
+            // btnIspis
+            // 
+            this.btnIspis.Location = new System.Drawing.Point(276, 136);
+            this.btnIspis.Name = "btnIspis";
+            this.btnIspis.Size = new System.Drawing.Size(75, 36);
+            this.btnIspis.TabIndex = 4;
+            this.btnIspis.Text = "Ispis izvješća";
+            this.btnIspis.UseVisualStyleBackColor = true;
+            this.btnIspis.Click += new System.EventHandler(this.btnIspis_Click);
+            // 
+            // tbStanje
+            // 
+            this.tbStanje.Location = new System.Drawing.Point(120, 56);
+            this.tbStanje.Name = "tbStanje";
+            this.tbStanje.ReadOnly = true;
+            this.tbStanje.Size = new System.Drawing.Size(100, 20);
+            this.tbStanje.TabIndex = 3;
+            // 
+            // tbRazlika
+            // 
+            this.tbRazlika.Location = new System.Drawing.Point(120, 24);
+            this.tbRazlika.Name = "tbRazlika";
+            this.tbRazlika.ReadOnly = true;
+            this.tbRazlika.Size = new System.Drawing.Size(100, 20);
+            this.tbRazlika.TabIndex = 2;
             // 
             // label10
             // 
@@ -316,53 +368,54 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Stanje:";
             // 
-            // textBox8
+            // label9
             // 
-            this.textBox8.Location = new System.Drawing.Point(120, 24);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 2;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Inventurna razlika:";
             // 
-            // textBox9
+            // btnPovijest
             // 
-            this.textBox9.Location = new System.Drawing.Point(120, 56);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 3;
+            this.btnPovijest.Location = new System.Drawing.Point(618, 12);
+            this.btnPovijest.Name = "btnPovijest";
+            this.btnPovijest.Size = new System.Drawing.Size(143, 30);
+            this.btnPovijest.TabIndex = 8;
+            this.btnPovijest.Text = "Prikaži povijest inventura";
+            this.btnPovijest.UseVisualStyleBackColor = true;
+            this.btnPovijest.Click += new System.EventHandler(this.btnPovijest_Click);
             // 
-            // button5
+            // lblStatus
             // 
-            this.button5.Location = new System.Drawing.Point(276, 136);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 36);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Ispis izvješća";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(195, 136);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 36);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Pohrani";
-            this.button6.UseVisualStyleBackColor = true;
+            this.lblStatus.Location = new System.Drawing.Point(74, 44);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(120, 23);
+            this.lblStatus.TabIndex = 8;
+            this.lblStatus.Text = "status";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormInventura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 471);
+            this.ClientSize = new System.Drawing.Size(777, 471);
+            this.Controls.Add(this.btnPovijest);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dgvPopisArtikala);
+            this.Controls.Add(this.dtpDatumInventure);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormInventura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventura";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormInventura_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -379,35 +432,38 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpDatumInventure;
+        private System.Windows.Forms.DataGridView dgvPopisArtikala;
+        private System.Windows.Forms.Button btnUcitaj;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbKnjigCijena;
+        private System.Windows.Forms.TextBox tbKnjigKolicina;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbStvCijena;
+        private System.Windows.Forms.Button btnDohvati;
+        private System.Windows.Forms.TextBox tbStvKolicina;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button btnUkloni;
+        private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.TextBox tbKolicina;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbJedinicnaCijena;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbSifra;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btnPohrani;
+        private System.Windows.Forms.Button btnIspis;
+        private System.Windows.Forms.TextBox tbStanje;
+        private System.Windows.Forms.TextBox tbRazlika;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnPovijest;
+        private System.Windows.Forms.Button btnIzracunaj;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
