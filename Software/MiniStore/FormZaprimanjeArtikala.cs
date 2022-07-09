@@ -27,10 +27,24 @@ namespace MiniStore
         {
             OsvjeziCB();
             btnSpremi.Enabled = false;
+
+            dgvStavkePrimke.Columns[9].Visible = false;
+            dgvStavkePrimke.Columns[0].HeaderText = "Šifra artikla";
+            dgvStavkePrimke.Columns[1].HeaderText = "Šifra primke";
+            dgvStavkePrimke.Columns[2].HeaderText = "ID dobavljača";
+            dgvStavkePrimke.Columns[3].HeaderText = "ID skladišta";
+            dgvStavkePrimke.Columns[4].HeaderText = "Količina";
+            dgvStavkePrimke.Columns[5].HeaderText = "Cijena";
+            dgvStavkePrimke.Columns[6].HeaderText = "Zaprimljeno";
+            dgvStavkePrimke.Columns[7].HeaderText = "Naziv artikla";
+            dgvStavkePrimke.Columns[8].HeaderText = "Naziv dobavljača";
+            dgvStavkePrimke.Columns[10].HeaderText = "Oznaka trgovine";
         }
 
         private void btnZaprimi_Click(object sender, EventArgs e)
         {
+            cbPrimke.Enabled = false;
+
             if(stavkePrimkeList.Count != 0)
             {
                 var odabranaStavka = dgvStavkePrimke.CurrentRow.DataBoundItem as ArtiklPrimka;
@@ -69,8 +83,26 @@ namespace MiniStore
             dgvStavkePrimke.DataSource = null;
             dgvStavkePrimke.DataSource = stavkePrimkeList;
 
+            dgvStavkePrimke.Columns[9].Visible = false;
+            dgvStavkePrimke.Columns[0].HeaderText = "Šifra artikla";
+            dgvStavkePrimke.Columns[1].HeaderText = "Šifra primke";
+            dgvStavkePrimke.Columns[2].HeaderText = "ID dobavljača";
+            dgvStavkePrimke.Columns[3].HeaderText = "ID skladišta";
+            dgvStavkePrimke.Columns[4].HeaderText = "Količina";
+            dgvStavkePrimke.Columns[5].HeaderText = "Cijena";
+            dgvStavkePrimke.Columns[6].HeaderText = "Zaprimljeno";
+            dgvStavkePrimke.Columns[7].HeaderText = "Naziv artikla";
+            dgvStavkePrimke.Columns[8].HeaderText = "Naziv dobavljača";
+            dgvStavkePrimke.Columns[10].HeaderText = "Oznaka trgovine";
+
             dgvZaprimljeneStavke.DataSource = null;
             dgvZaprimljeneStavke.DataSource = zaprimljeneStavkeList;
+
+            dgvZaprimljeneStavke.Columns[3].Visible = false;
+            dgvZaprimljeneStavke.Columns[4].Visible = false;
+            dgvZaprimljeneStavke.Columns[0].HeaderText = "Šifra artikla";
+            dgvZaprimljeneStavke.Columns[1].HeaderText = "ID skladišta";
+            dgvZaprimljeneStavke.Columns[2].HeaderText = "Količina";
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)
@@ -117,6 +149,7 @@ namespace MiniStore
             zaprimljeneStavkeList.Clear();
             dgvStavkePrimke.DataSource = null;
             dgvZaprimljeneStavke.DataSource = null;
+            cbPrimke.Enabled = true;
         }
 
         private void btnZatvori_Click(object sender, EventArgs e)

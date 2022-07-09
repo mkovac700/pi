@@ -164,7 +164,10 @@
             this.Controls.Add(this.dgvStavkePrimke);
             this.Controls.Add(this.cbPrimke);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormZaprimanjeArtikala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zaprimanje artikala";
             this.Load += new System.EventHandler(this.FormZaprimanjeArtikala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimke)).EndInit();
