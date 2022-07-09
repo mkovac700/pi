@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace MiniStore
 {
     public partial class FormPrijava : Form
     {
+        Database entities = new Database();
         public FormPrijava()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace MiniStore
 
         private void FormPrijava_Load(object sender, EventArgs e)
         {
-            //random test
+
         }
 
         private void btnPrijava_Click(object sender, EventArgs e)
@@ -38,6 +40,34 @@ namespace MiniStore
 
                 if (Autentifikator.DohvatiPrijavljenogKorisnika() != null)
                 {
+
+                    if(Autentifikator.DohvatiPrijavljenogKorisnika().registriran == 0)
+                    {
+                        FormPrijavaKod formPrijavaKod = new FormPrijavaKod();
+                        var result = formPrijavaKod.ShowDialog();
+
+                        if(result == DialogResult.OK)
+                        {
+                            if(Autentifikator.DohvatiPrijavljenogKorisnika().kod == formPrijavaKod.kod)
+                            {
+                                entities.Korisniks.Load();
+                                entities.Korisniks.Local.FirstOrDefault(x => x.id == Autentifikator.DohvatiPrijavljenogKorisnika().id).registriran = 1;
+                                entities.SaveChanges();
+                                MessageBox.Show("Korisnik uspješno registriran!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Kod nije ispravan!");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registracija neuspješna!");
+                            return;
+                        }
+                    }
+
                     this.Hide();
 
                     GlavnaForma glavnaForma = new GlavnaForma();
