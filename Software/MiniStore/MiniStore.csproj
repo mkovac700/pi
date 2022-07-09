@@ -169,6 +169,12 @@
     <Compile Include="FormPovratnicaIzvjestaj.Designer.cs">
       <DependentUpon>FormPovratnicaIzvjestaj.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPrijavaKod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrijavaKod.Designer.cs">
+      <DependentUpon>FormPrijavaKod.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegistracija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,7 @@
     <Compile Include="Trgovina.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="VrstaKorisnika.code.cs" />
     <Compile Include="VrstaKorisnika.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -348,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPovratnicaIzvjestaj.resx">
       <DependentUpon>FormPovratnicaIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrijavaKod.resx">
+      <DependentUpon>FormPrijavaKod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistracija.resx">
+      <DependentUpon>FormRegistracija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSatnica.resx">
       <DependentUpon>FormSatnica.cs</DependentUpon>

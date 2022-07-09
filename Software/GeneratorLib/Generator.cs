@@ -23,13 +23,12 @@ namespace GeneratorLib
             return (Math.Abs(longRand % (max - min)) + min);
         }
 
-        public static string GenerirajAktivacijskiKod()
+        public static string GenerirajSifru(int length)
         {
             StringBuilder sb = new StringBuilder();
             Random rand = new Random();
 
-            int length = 16;
-            const string chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string chars = "0123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ";
 
             for (int i = 0; i < length; i++)
             {
