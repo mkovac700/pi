@@ -43,6 +43,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbPoslovnica = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.hpPomoc = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSatnica)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -202,6 +203,10 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Poslovnica:";
             // 
+            // hpPomoc
+            // 
+            this.hpPomoc.HelpNamespace = "Help/help-upravljanje-satnicom.chm";
+            // 
             // FormUpravljanjeSatnicom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,10 +219,15 @@
             this.Controls.Add(this.btnUredi);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvSatnica);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormUpravljanjeSatnicom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Upravljanje satnicom";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.FormUpravljanjeSatnicom_HelpButtonClicked);
             this.Load += new System.EventHandler(this.FormUpravljanjeSatnicom_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormUpravljanjeSatnicom_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSatnica)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -244,5 +254,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbPoslovnica;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.HelpProvider hpPomoc;
     }
 }

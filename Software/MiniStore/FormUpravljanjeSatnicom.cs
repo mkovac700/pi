@@ -217,5 +217,15 @@ namespace MiniStore
                 formUpravljanjeSatnicomIzvjestaj.Show();
             }
         }
+
+        private void FormUpravljanjeSatnicom_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            Help.ShowHelp(this, "Help/help-upravljanje-satnicom.chm");
+        }
+
+        private void FormUpravljanjeSatnicom_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help/help-upravljanje-satnicom.chm");
+        }
     }
 }

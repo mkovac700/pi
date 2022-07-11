@@ -177,5 +177,15 @@ namespace MiniStore
             dgvStavkePrimke.DataSource = null;
             dgvStavkePrimke.DataSource = stavkePrimkeList;
         }
+
+        private void FormZaprimanjeArtikala_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            Help.ShowHelp(this, "Help/help-zaprimanje-artikala.chm");
+        }
+
+        private void FormZaprimanjeArtikala_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "Help/help-zaprimanje-artikala.chm");
+        }
     }
 }
