@@ -9,7 +9,7 @@ namespace MiniStore
     public class StatistikaProdajeArtikl
     {
         public string NazivProizvoda { get; set; }
-        public int? SifraProizvoda { get; set; }
+        public long? SifraProizvoda { get; set; }
         public string Kategorija { get; set; }
         public int? VolumenProdaje { get; set; }
         public decimal? ProdanaVrijednost { get; set; }

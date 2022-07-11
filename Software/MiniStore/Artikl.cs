@@ -25,7 +25,7 @@ namespace MiniStore
             this.RacunArtikls = new HashSet<RacunArtikl>();
         }
     
-        public int id { get; set; }
+        public long id { get; set; }
         public string naziv { get; set; }
         public string kategorija { get; set; }
         public Nullable<int> dobavljacId { get; set; }

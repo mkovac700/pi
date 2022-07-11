@@ -24,6 +24,7 @@ namespace MiniStore
         public Nullable<int> dobavljacId { get; set; }
         public Nullable<int> skladisteId { get; set; }
         public Nullable<System.DateTime> datumVrijeme { get; set; }
+        public Nullable<byte> zaprimljeno { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArtiklPrimka> ArtiklPrimkas { get; set; }

@@ -14,12 +14,13 @@ namespace MiniStore
     
     public partial class ArtiklPrimka
     {
-        public int artiklId { get; set; }
+        public long artiklId { get; set; }
         public int primkaId { get; set; }
         public Nullable<int> dobavljacId { get; set; }
         public Nullable<int> skladisteId { get; set; }
         public Nullable<int> kolicina { get; set; }
         public Nullable<decimal> cijena { get; set; }
+        public Nullable<byte> zaprimljeno { get; set; }
     
         public virtual Artikl Artikl { get; set; }
         public virtual Dobavljac Dobavljac { get; set; }

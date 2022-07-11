@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Bruno\Documents\GitHub\pi22-bbasic-mkovac-tkovacevi\Software\MiniStore\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Marijan\Documents\GitHub\pi22-bbasic-mkovac-tkovacevi\Software\MiniStore\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

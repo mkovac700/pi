@@ -14,11 +14,12 @@ namespace MiniStore
     
     public partial class ArtiklPovratnica
     {
-        public int artiklId { get; set; }
+        public long artiklId { get; set; }
         public int povratnicaId { get; set; }
         public Nullable<int> kolicina { get; set; }
         public Nullable<decimal> cijena { get; set; }
     
         public virtual Artikl Artikl { get; set; }
+        public virtual Povratnica Povratnica { get; set; }
     }
 }
