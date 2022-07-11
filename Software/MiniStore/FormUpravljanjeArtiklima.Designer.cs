@@ -30,7 +30,7 @@
         {
             this.dgvArtikli = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnObrisi = new System.Windows.Forms.Button();
+            this.btnIspisi = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,9 +38,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbSkladiste = new System.Windows.Forms.RadioButton();
             this.rbSvi = new System.Windows.Forms.RadioButton();
+            this.barcodeData = new MiniStore.BarcodeData();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArtikli)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeData)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvArtikli
@@ -58,7 +60,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.btnObrisi, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnIspisi, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDodaj, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnUredi, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 401);
@@ -68,14 +70,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(601, 55);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // btnObrisi
+            // btnIspisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(403, 3);
-            this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(195, 49);
-            this.btnObrisi.TabIndex = 2;
-            this.btnObrisi.Text = "Obriši odabrani artikl";
-            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnIspisi.Location = new System.Drawing.Point(403, 3);
+            this.btnIspisi.Name = "btnIspisi";
+            this.btnIspisi.Size = new System.Drawing.Size(195, 49);
+            this.btnIspisi.TabIndex = 2;
+            this.btnIspisi.Text = "Ispiši etikete";
+            this.btnIspisi.UseVisualStyleBackColor = true;
+            this.btnIspisi.Click += new System.EventHandler(this.btnIspisi_Click);
             // 
             // btnDodaj
             // 
@@ -153,6 +156,11 @@
             this.rbSvi.UseVisualStyleBackColor = true;
             this.rbSvi.CheckedChanged += new System.EventHandler(this.rbSvi_CheckedChanged);
             // 
+            // barcodeData
+            // 
+            this.barcodeData.DataSetName = "BarcodeData";
+            this.barcodeData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FormUpravljanjeArtiklima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +179,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barcodeData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -179,7 +188,7 @@
 
         private System.Windows.Forms.DataGridView dgvArtikli;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.Button btnIspisi;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnUredi;
         private System.Windows.Forms.Label label1;
@@ -187,5 +196,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbSkladiste;
         private System.Windows.Forms.RadioButton rbSvi;
+        private BarcodeData barcodeData;
     }
 }
