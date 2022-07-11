@@ -4,10 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BarcodeLib;
 
 namespace MiniStore
 {
@@ -140,7 +143,7 @@ namespace MiniStore
 
         private void rbSkladiste_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbSkladiste.Checked)
+            if (rbSkladiste.Checked && cbSkladiste.SelectedItem != null)
             {
                 OsvjeziDGVArtikliSkladiste();
             }
@@ -152,6 +155,37 @@ namespace MiniStore
             {
                 OsvjeziDGVArtikliSkladiste();
             }
+        }
+
+        private void btnIspisi_Click(object sender, EventArgs e)
+        {
+            string odabraniID = "0";
+            if (rbSvi.Checked)
+            {
+                odabraniID = (dgvArtikli.CurrentRow.DataBoundItem as Artikl).id.ToString().PadLeft(12, '0');
+            }
+            if (rbSkladiste.Checked)
+            {
+                odabraniID = (dgvArtikli.CurrentRow.DataBoundItem as ArtiklSkladiste).artiklId.ToString().PadLeft(12, '0');
+            }
+
+            Barcode barcode = new Barcode();
+            Image barcodeImg = barcode.Encode(TYPE.UPCA, odabraniID, Color.Black, Color.White, 100, 30);
+
+            this.barcodeData.Clear();
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                barcodeImg.Save(ms, ImageFormat.Png);
+
+                for (int i = 0; i < 16; i++) 
+                {
+                    this.barcodeData.Barcode.AddBarcodeRow(odabraniID, ms.ToArray());
+                }
+            }
+
+            FormUpravljanjeArtiklimaIzvjestaj formUpravljanjeArtiklimaIzvjestaj = new FormUpravljanjeArtiklimaIzvjestaj(barcodeData.Barcode);
+            formUpravljanjeArtiklimaIzvjestaj.Show();
         }
     }
 }
