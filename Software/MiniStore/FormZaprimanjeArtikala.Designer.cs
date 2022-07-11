@@ -40,6 +40,7 @@
             this.btnZatvori = new System.Windows.Forms.Button();
             this.chkboxPrimkaZaprimljena = new System.Windows.Forms.CheckBox();
             this.tooltipCheckbox = new System.Windows.Forms.ToolTip(this.components);
+            this.hpPomoc = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaprimljeneStavke)).BeginInit();
             this.SuspendLayout();
@@ -149,6 +150,10 @@
             this.tooltipCheckbox.IsBalloon = true;
             this.tooltipCheckbox.ReshowDelay = 100;
             // 
+            // hpPomoc
+            // 
+            this.hpPomoc.HelpNamespace = "Help/help-zaprimanje-artikala.chm";
+            // 
             // FormZaprimanjeArtikala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,11 +170,16 @@
             this.Controls.Add(this.cbPrimke);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormZaprimanjeArtikala";
+            this.hpPomoc.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zaprimanje artikala";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.FormZaprimanjeArtikala_HelpButtonClicked);
             this.Load += new System.EventHandler(this.FormZaprimanjeArtikala_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormZaprimanjeArtikala_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaprimljeneStavke)).EndInit();
             this.ResumeLayout(false);
@@ -190,5 +200,6 @@
         private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.CheckBox chkboxPrimkaZaprimljena;
         private System.Windows.Forms.ToolTip tooltipCheckbox;
+        private System.Windows.Forms.HelpProvider hpPomoc;
     }
 }
